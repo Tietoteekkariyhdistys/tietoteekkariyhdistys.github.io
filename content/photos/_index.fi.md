@@ -1,0 +1,4 @@
++++
+title = "Valokuvat"
+type = "gallery"
++++

@@ -1,0 +1,83 @@
+baseURL = 'https://tietoteekkariyhdistys.fi/'
+languageCode = 'fi-FI'
+title = 'Tietoteekkariyhdistys TTY'
+theme = "hugo-theme-console"
+defaultContentLanguage = 'fi'
+
+[params]
+  # Cutting off the page title to two chars for mobile (console-demo -> co)
+  titleCutting = true
+
+  # Set the animation style -- https://animate.style/
+  # To disable animations, please remove or comment animationStyle parameter
+  animateStyle = "animated zoomIn fast"
+
+  [[params.navlinks]]
+  url = "about/"
+  name = { fi = "mikä/", sv = "vad/", en = "what/" }
+
+  [[params.navlinks]]
+  name = { fi = "tiedotteet/", sv = "nyheter/", en = "posts/" }
+  url = "posts/"
+
+  [[params.navlinks]]
+  name = { fi = "hallitus/", sv = "styrelse/", en = "board/" }
+  url = "board/"
+
+  [[params.navlinks]]
+  name = { fi = "jäsenet/", sv = "medlemmar/", en = "members/" }
+  url = "members/"
+
+  [[params.navlinks]]
+  name = { fi = "liity/", sv = "bli medlem/", en = "join/" }
+  url = "join/"
+
+[languages]
+  [languages.fi]
+    disabled = false
+    languageCode = 'fi-FI'
+    languageDirection = 'ltr'
+    languageName = 'Suomi'
+    title = 'Tietoteekkariyhdistys TTY'
+    weight = 1
+      [languages.fi.params]
+        heroTitle = "Niin mikä?"
+        heroText1 = "Tietoteekkariyhdistys (TTY) on vuonna 2023 perustettu Suomen tietoteekkarikiltojen kattojärjestö."
+        heroText2 = "(lue lisää)"
+        latestPosts = "Uusimmat tiedotteet"
+        latestPhotos = "Uusimmat valokuvat"
+        noPosts = "Yhtäkään tiedotetta ei ole julkaistu."
+
+  [languages.sv]
+    disabled = false
+    languageCode = 'sv-FI'
+    languageDirection = 'ltr'
+    languageName = 'Svenska'
+    title = 'Tietoteekkariyhdistys TTY'
+    weight = 2
+      [languages.sv.params]
+        heroTitle = "Alltså vad?"
+        heroText1 = "Tietoteekkariyhdistys (TTY) är en takförening för datateknologämnesföreningar i Finland. TTY grundades år 2023."
+        heroText2 = "(läs mer)"
+        latestPosts = "Senaste nyheterna"
+        latestPhotos = "Senaste fotona"
+        noPosts = "Inga nyheter har publicerats."
+
+  [languages.en]
+    disabled = false
+    languageCode = 'en-US'
+    languageDirection = 'ltr'
+    languageName = 'English'
+    title = 'Tietoteekkariyhdistys TTY'
+    weight = 3
+      [languages.en.params]
+        heroTitle = "The what?"
+        heroText1 = "Tietoteekkariyhdistys (TTY) is an umbrella organization for Finnish IT technology student guilds, founded in 2023."
+        heroText2 = "(read more)"
+        latestPosts = "Latest posts"
+        latestPhotos = "Latest photos"
+        noPosts = "No posts have been published."
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'

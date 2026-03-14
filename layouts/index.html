@@ -1,0 +1,56 @@
+{{ define "main" }}
+
+<h1>{{ site.Params.heroTitle }}</h1>
+
+<p>
+{{ site.Params.heroText1 }}
+ <a href="about/">
+{{ site.Params.heroText2 }}</a>
+</p>
+<br/>
+
+<!-- Only display the three latest posts if there are any -->
+{{ with .Site.GetPage "/posts" }}
+    {{ $posts := first 3 (sort .Data.Pages "Date" "desc" (where .Pages ".Params.private" "!=" true)) }}
+    {{ $postsCount := len $posts }}
+
+    {{ if ge $postsCount 1 }}
+        <h1>{{ site.Params.latestPosts }}</h1>
+
+        <div class="posts-list">
+            {{ range first 3 (sort .Data.Pages "Date" "desc" (where .Pages ".Params.private" "!=" true)) }}
+                <div class="post">
+                    <p>
+                        <div class="date">{{ .PublishDate.Format "2.1.2006" }}</div>
+                        <h1><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h1>
+                        {{ .Summary }}
+                    </p>
+                </div>    
+            {{ end }}
+        </div>
+    {{ end }}
+{{ end }}
+
+<!-- Only display the three latest photos if there are any -->
+{{ with .Site.GetPage "/photos" }}
+    {{ $photos := first 3 (sort .Data.Pages "Date" "desc") }}
+    {{ $photosCount := len $photos }}
+
+    {{ if ge $photosCount 1 }}
+        <h1>{{ site.Params.latestPhotos }}</h1>
+
+        <div class="image-grid">
+            {{ range first 3 (sort .Data.Pages "Date" "desc") }}
+                <a href="{{ .Permalink }}" title="{{ .Title }}">
+                {{ $image := .Page.Resources.GetMatch .Params.image }}
+                {{ with $image }}
+                    {{ $thumb := .Resize "600x" }}
+                    <img src="{{ $thumb.RelPermalink }}" alt="{{ .Title }}" class="img-responsive">
+                {{end}}
+                </a>
+            {{ end }}
+        </div>
+    {{ end }}
+{{ end }}
+
+{{ end }}

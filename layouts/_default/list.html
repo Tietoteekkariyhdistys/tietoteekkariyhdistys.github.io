@@ -1,0 +1,26 @@
+{{ define "main" }}
+<h1>{{ .Page.Title }}</h1>
+<br/>
+{{ .Content }}
+
+{{ $posts := sort .Data.Pages "Date" "desc" }}
+{{ $postsCount := len $posts }}
+{{ if ge $postsCount 1 }}
+    <div class="posts-list">
+    {{ range sort .Data.Pages "Date" "desc" }}
+        {{ if not .Params.private }}
+            <div class="post">
+                <p>
+                    <div class="date">{{ .PublishDate.Format "2.1.2006" }}</div>    
+                    <h1><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h1>
+                    {{ .Summary }}
+                </p>
+            </div>
+        {{ end }}
+    {{ end }}
+    </div>
+{{ else }}
+    <p>{{ site.Params.noPosts }}</p>
+{{ end }}
+
+{{ end }}

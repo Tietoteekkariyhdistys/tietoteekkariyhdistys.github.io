@@ -1,0 +1,18 @@
+<div class="footer">
+  © Tietoteekkariyhdistys ry. Powered by
+  <a href="https://gohugo.io/">Hugo</a> with
+  <a href="https://github.com/mrmierzejewski/hugo-theme-console/"
+    >Console Theme</a
+  >.
+  <nav class="terminal-menu">
+    <ul>
+      {{ range $.Site.Home.AllTranslations }}
+      <li>
+        <a href="{{ .RelPermalink }}" typeof="ListItem"
+          >{{ .Language.LanguageName }}</a
+        >
+      </li>
+      {{ end }}
+    </ul>
+  </nav>
+</div>
