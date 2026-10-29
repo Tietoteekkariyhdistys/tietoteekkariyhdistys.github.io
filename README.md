@@ -2,6 +2,12 @@
 
 A website powered by [Hugo](https://gohugo.io/), a static site generator, and the [Console](https://github.com/mrmierzejewski/hugo-theme-console) theme. Changes to this repository will directly affect the resulting website which Hugo builds.
 
+## Live site
+
+The sandbox version of the site is published with GitHub Pages: <https://thesoosi.github.io/Tietoteekkariyhdistys-sandbox/>
+
+It is rebuilt on every push to `main` and once a day (so past events drop off the events list).
+
 ## Requirements
 
 - [Hugo](https://gohugo.io/installation/)
