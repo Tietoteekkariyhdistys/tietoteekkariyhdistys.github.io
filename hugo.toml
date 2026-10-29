@@ -1,36 +1,81 @@
 baseURL = '/'
 languageCode = 'fi-FI'
 title = 'Tietoteekkariyhdistys TTY'
-theme = "hugo-theme-console"
 defaultContentLanguage = 'fi'
+timeZone = 'Europe/Helsinki'
+
+[module]
+  # Use the theme layouts only; its static terminal CSS and fonts are not shipped
+  [[module.imports]]
+    path = "hugo-theme-console"
+    [[module.imports.mounts]]
+      source = "layouts"
+      target = "layouts"
+    [[module.imports.mounts]]
+      source = "archetypes"
+      target = "archetypes"
+
 
 [params]
-  # Cutting off the page title to two chars for mobile (console-demo -> co)
-  titleCutting = true
+  bylawsPdf = "saannot.pdf"
 
-  # Set the animation style -- https://animate.style/
-  # To disable animations, please remove or comment animationStyle parameter
-  animateStyle = "animated zoomIn fast"
+  # Explorer tree. Folders in order; files link to pages (path is relative to the language root;
+  # abs = true links to the single-language page without the language prefix).
+  # File names are per language. The "guilds" folder is filled from data/guilds.yaml and the
+  # "events" folder also lists the event pages.
+  [[params.tree]]
+  dir = "tty"
+    [[params.tree.files]]
+    path = ""
+    name = { fi = "readme.md", sv = "readme.md", en = "readme.md" }
+    [[params.tree.files]]
+    path = "about/"
+    name = { fi = "yhdistys.md", sv = "forening.md", en = "about.md" }
+    [[params.tree.files]]
+    path = "posts/"
+    name = { fi = "tiedotteet.md", sv = "nyheter.md", en = "news.md" }
+    [[params.tree.files]]
+    path = "board/"
+    name = { fi = "hallitus.md", sv = "styrelse.md", en = "board.md" }
+    [[params.tree.files]]
+    path = "members/"
+    name = { fi = "jasenkillat.md", sv = "medlemsforeningar.md", en = "members.md" }
+    [[params.tree.files]]
+    path = "join/"
+    name = { fi = "liity.md", sv = "bli-medlem.md", en = "join.md" }
+    [[params.tree.files]]
+    path = "photos/"
+    name = { fi = "valokuvat.md", sv = "foton.md", en = "photos.md" }
+    [[params.tree.files]]
+    path = "contact/"
+    name = { fi = "yhteystiedot.md", sv = "kontakt.md", en = "contact.md" }
 
-  [[params.navlinks]]
-  url = "about/"
-  name = { fi = "mikä/", sv = "vad/", en = "what/" }
+  [[params.tree]]
+  dir = "guilds"
+  kind = "guilds"
 
-  [[params.navlinks]]
-  name = { fi = "tiedotteet/", sv = "nyheter/", en = "posts/" }
-  url = "posts/"
+  [[params.tree]]
+  dir = "events"
+  kind = "events"
+    [[params.tree.files]]
+    path = "events/"
+    name = { fi = "tapahtumat.md", sv = "evenemang.md", en = "events.md" }
 
-  [[params.navlinks]]
-  name = { fi = "hallitus/", sv = "styrelse/", en = "board/" }
-  url = "board/"
-
-  [[params.navlinks]]
-  name = { fi = "jäsenet/", sv = "medlemmar/", en = "members/" }
-  url = "members/"
-
-  [[params.navlinks]]
-  name = { fi = "liity/", sv = "bli medlem/", en = "join/" }
-  url = "join/"
+  [[params.tree]]
+  dir = "docs"
+    [[params.tree.files]]
+    path = "documents/"
+    name = { fi = "asiakirjat.md", sv = "dokument.md", en = "documents.md" }
+    [[params.tree.files]]
+    path = "bylaws/"
+    abs = true
+    name = { fi = "saannot.md", sv = "saannot.md", en = "bylaws.md" }
+    [[params.tree.files]]
+    path = "old-boards/"
+    name = { fi = "vanhat-hallitukset.md", sv = "gamla-styrelser.md", en = "old-boards.md" }
+    [[params.tree.files]]
+    path = "privacy/"
+    name = { fi = "tietosuoja.md", sv = "dataskydd.md", en = "privacy.md" }
 
 [languages]
   [languages.fi]
@@ -41,12 +86,41 @@ defaultContentLanguage = 'fi'
     title = 'Tietoteekkariyhdistys TTY'
     weight = 1
       [languages.fi.params]
-        heroTitle = "Niin mikä?"
+        noPhotos = "Valokuvia ei ole vielä julkaistu."
+        mainNav = "Päävalikko"
+        joinLabel = "Liity"
+        heroMore = "Lue lisää"
+        factLine = "%d jäsenkiltaa."
+        skipLink = "Siirry sisältöön"
+        footerNav = "Lisätiedot"
+        contactTitle = "Yhteystiedot"
+        documentsTitle = "Asiakirjat"
+        privacyTitle = "Tietosuojaseloste"
+        eventsNav = "Tapahtumat"
+        eventsTitle = "Tulevat tapahtumat"
+        noEvents = "Ei tulevia tapahtumia."
+        eventLocation = "Paikka"
+        eventLink = "Lisätietoja"
         heroText1 = "Tietoteekkariyhdistys (TTY) on vuonna 2023 perustettu Suomen tietoteekkarikiltojen kattojärjestö."
-        heroText2 = "(lue lisää)"
+        description = "Tietoteekkariyhdistys ry on Suomen tietotekniikan opiskelijoiden kiltojen kattojärjestö, joka ajaa opiskelijoiden etuja valtakunnallisella tasolla."
         latestPosts = "Uusimmat tiedotteet"
         latestPhotos = "Uusimmat valokuvat"
         noPosts = "Yhtäkään tiedotetta ei ole julkaistu."
+        purposeTitle = "Tarkoitus"
+        purposeText = "Tietoteekkariyhdistys ry:n tarkoituksena on yhdistää Suomen tietotekniikan diplomi-insinööriksi johtavien koulutusohjelmien opiskelijoita, ajaa heidän opiskeluun liittyviä etujaan valtakunnallisella tasolla ja luoda jäsenilleen merkityksellisiä elämänkokemuksia. Järjestämme tapahtumia, juhlia ja excursioita, toimimme yhteistyössä kiltojen, ylioppilaskuntien, yliopistojen ja yritysten kanssa sekä tuemme kiltojen välistä viestintää."
+        bylawsLink = "Yhdistyksen säännöt"
+        guildsTitle = "Jäsenkillat"
+        explorerTitle = "Tiedostot"
+        crumbLabel = "Polku"
+        colGuild = "Kilta"
+        colUniversity = "Yliopisto"
+        colCity = "Kaupunki"
+        foldersCount = "kansiota"
+        filesCount = "tiedostoa"
+        kvRole = "rooli:"
+        kvName = "nimi:"
+        langLabel = "Kieli"
+        officialSite = "Tietoteekkariyhdistys ry:n virallinen verkkosivusto"
 
   [languages.sv]
     disabled = false
@@ -56,12 +130,41 @@ defaultContentLanguage = 'fi'
     title = 'Tietoteekkariyhdistys TTY'
     weight = 2
       [languages.sv.params]
-        heroTitle = "Alltså vad?"
+        noPhotos = "Inga foton har publicerats ännu."
+        mainNav = "Huvudmeny"
+        joinLabel = "Bli medlem"
+        heroMore = "Läs mer"
+        factLine = "%d medlemsföreningar."
+        skipLink = "Hoppa till innehållet"
+        footerNav = "Mer information"
+        contactTitle = "Kontakt"
+        documentsTitle = "Dokument"
+        privacyTitle = "Dataskyddsbeskrivning"
+        eventsNav = "Evenemang"
+        eventsTitle = "Kommande evenemang"
+        noEvents = "Inga kommande evenemang."
+        eventLocation = "Plats"
+        eventLink = "Mer information"
         heroText1 = "Tietoteekkariyhdistys (TTY) är en takförening för datateknologämnesföreningar i Finland. TTY grundades år 2023."
-        heroText2 = "(läs mer)"
+        description = "Tietoteekkariyhdistys ry är en takförening för datateknologämnesföreningar i Finland och driver studerandenas intressen på riksnivå."
         latestPosts = "Senaste nyheterna"
         latestPhotos = "Senaste fotona"
         noPosts = "Inga nyheter har publicerats."
+        purposeTitle = "Ändamål"
+        purposeText = "Tietoteekkariyhdistys ry:s ändamål är att förena studerande på utbildningslinjer som leder till diplomingenjörsexamen inom datateknik i Finland, förespråka deras studierelaterade intressen på riksnivå och skapa betydelsefulla livserfarenheter för sina medlemmar. Vi ordnar evenemang, fester och excursioner, samarbetar med ämnesföreningar, studentkårer, universitet och företag samt stöder kommunikationen mellan ämnesföreningarna."
+        bylawsLink = "Föreningens regler (på finska)"
+        guildsTitle = "Medlemsföreningar"
+        explorerTitle = "Filer"
+        crumbLabel = "Sökväg"
+        colGuild = "Förening"
+        colUniversity = "Universitet"
+        colCity = "Stad"
+        foldersCount = "mappar"
+        filesCount = "filer"
+        kvRole = "roll:"
+        kvName = "namn:"
+        langLabel = "Språk"
+        officialSite = "Tietoteekkariyhdistys ry:s officiella webbplats"
 
   [languages.en]
     disabled = false
@@ -71,12 +174,41 @@ defaultContentLanguage = 'fi'
     title = 'Tietoteekkariyhdistys TTY'
     weight = 3
       [languages.en.params]
-        heroTitle = "The what?"
-        heroText1 = "Tietoteekkariyhdistys (TTY) is an umbrella organization for Finnish IT technology student guilds, founded in 2023."
-        heroText2 = "(read more)"
+        noPhotos = "No photos have been published yet."
+        mainNav = "Main menu"
+        joinLabel = "Join"
+        heroMore = "Read more"
+        factLine = "%d member guilds."
+        skipLink = "Skip to content"
+        footerNav = "More information"
+        contactTitle = "Contact"
+        documentsTitle = "Documents"
+        privacyTitle = "Privacy policy"
+        eventsNav = "Events"
+        eventsTitle = "Upcoming events"
+        noEvents = "No upcoming events."
+        eventLocation = "Location"
+        eventLink = "More information"
+        heroText1 = "Tietoteekkariyhdistys (TTY) is an umbrella organization for Finnish IT student guilds, founded in 2023."
+        description = "Tietoteekkariyhdistys ry is an umbrella association of Finnish IT student guilds, advocating for students at the national level."
         latestPosts = "Latest posts"
         latestPhotos = "Latest photos"
         noPosts = "No posts have been published."
+        purposeTitle = "Purpose"
+        purposeText = "Tietoteekkariyhdistys ry is a non-profit association that brings together students of Finnish computer science and IT engineering (M.Sc. Tech.) degree programmes, advocates for their study-related interests at the national level, and creates meaningful experiences for its members. We organize events, gatherings and excursions, cooperate with student guilds, student unions, universities and companies, and support communication between the guilds."
+        bylawsLink = "Association bylaws (in Finnish)"
+        guildsTitle = "Member guilds"
+        explorerTitle = "Explorer"
+        crumbLabel = "Path"
+        colGuild = "Guild"
+        colUniversity = "University"
+        colCity = "City"
+        foldersCount = "folders"
+        filesCount = "files"
+        kvRole = "role:"
+        kvName = "name:"
+        langLabel = "Language"
+        officialSite = "Official website of Tietoteekkariyhdistys ry"
 
 [caches]
   [caches.images]

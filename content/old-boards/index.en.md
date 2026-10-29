@@ -2,7 +2,7 @@
 title = "Old Boards"
 +++
 
-The list of old organization boards begins.
+The list of old boards begins.
 
 ## 2025
 
@@ -34,4 +34,4 @@ The list of old organization boards begins.
 - **Board Member**: Nuutti Rantanen
 - **Board Member**: Saku Tiihonen
 
-The list of old organization boards ends.
+The list of old boards ends.

@@ -1,0 +1,42 @@
+{{ define "main" }}
+<article class="page wide">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  {{ with .Params.people }}
+  {{ $year := $.Params.year }}
+  {{ $sep := `\s(?:and|ja|och)\s` }}
+  {{- /* Master/detail without JS: radio inputs select the file, CSS (:has) shows only that panel.
+         Without CSS, where :has is unsupported, and in print, every panel is shown as a plain list. */ -}}
+  <style>
+  @supports selector(:has(a)) {
+  {{- range . }}
+    .board:has(#bf-{{ .file }}:checked) #{{ .file }} { display: block; }
+  {{- end }}
+  }
+  </style>
+  <div class="board">
+    <div class="board-tree">
+      <fieldset>
+        <legend>board-{{ $year }}/</legend>
+        {{ range $i, $p := . }}
+        <input type="radio" name="board-file" id="bf-{{ .file }}" value="{{ .file }}"{{ if eq $i 0 }} checked{{ end }}>
+        <label for="bf-{{ .file }}"><span class="fname">{{ .file }}.md</span><span class="who">{{ .name }}</span></label>
+        {{ end }}
+      </fieldset>
+    </div>
+    <div class="board-editor">
+      {{ range . }}
+      <section class="panel" id="{{ .file }}" aria-labelledby="{{ .file }}-t">
+        <div class="tabstrip"><h2 class="tab data" id="{{ .file }}-t">{{ .file }}.md</h2></div>
+        <dl class="kv data">
+          <div><dt>{{ site.Params.kvRole }}</dt><dd>{{ .role }}</dd></div>
+          <div><dt>{{ site.Params.kvName }}</dt>{{ range split (replaceRE $sep "|" .name) "|" }}<dd class="strong">{{ . }}</dd>{{ end }}</div>
+        </dl>
+      </section>
+      {{ end }}
+    </div>
+    <p class="board-foot data">board-{{ $year }}/ · {{ len . }} {{ site.Params.filesCount }} · <a href="mailto:hallitus@tietoteekkariyhdistys.fi">hallitus@tietoteekkariyhdistys.fi</a></p>
+  </div>
+  {{ end }}
+</article>
+{{ end }}

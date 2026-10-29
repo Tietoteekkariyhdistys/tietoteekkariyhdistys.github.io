@@ -1,0 +1,9 @@
+{{ define "main" }}
+<article class="page">
+  <h1>{{ .Title }}</h1>
+  <p class="meta">{{ .Date.Format "2.1.2006" }}
+  {{ with .Params.location }} · {{ site.Params.eventLocation }}: {{ . }}{{ end }}
+  {{ with .Params.link }} · <a href="{{ . }}">{{ site.Params.eventLink }}</a>{{ end }}</p>
+  {{ .Content }}
+</article>
+{{ end }}

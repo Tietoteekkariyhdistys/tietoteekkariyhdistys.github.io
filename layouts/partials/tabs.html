@@ -1,0 +1,5 @@
+{{- /* Decorative editor tab bar: the current page as an open tab. The breadcrumb below carries the same info for assistive tech. */ -}}
+{{ $f := partial "curfile.html" . }}
+<div class="tabbar" aria-hidden="true">
+  <span class="tab">{{ $f.name }}</span>
+</div>

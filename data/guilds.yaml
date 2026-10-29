@@ -1,0 +1,64 @@
+# Member guilds, shown on the landing page and the members page.
+# Fields: name, url, city, university (Finnish), optional university_sv / university_en and city_sv / city_en
+# (the Finnish value is used when a translation is missing).
+- name: OTiT
+  url: https://otit.fi/
+  university: Oulun yliopisto
+  university_sv: Uleåborgs universitet
+  university_en: University of Oulu
+  city: Oulu
+  city_sv: Uleåborg
+- name: TiK
+  url: https://tietokilta.fi/fi
+  university: Aalto-yliopisto
+  university_sv: Aalto-universitetet
+  university_en: Aalto University
+  city: Espoo
+  city_sv: Esbo
+- name: Digit
+  url: https://digit.fi/
+  university: Turun yliopisto
+  university_sv: Åbo universitet
+  university_en: University of Turku
+  city: Turku
+  city_sv: Åbo
+- name: TiTe
+  url: https://tietoteekkarikilta.fi/
+  university: Tampereen yliopisto
+  university_sv: Tammerfors universitet
+  university_en: Tampere University
+  city: Tampere
+  city_sv: Tammerfors
+- name: DaTe
+  url: https://datateknologerna.org/
+  university: Åbo Akademi
+  university_en: Åbo Akademi University
+  city: Turku
+  city_sv: Åbo
+- name: Cluster
+  url: https://cluster.fi/
+  university: LUT-yliopisto, Lappeenranta
+  university_sv: LUT-universitetet, Villmanstrand
+  university_en: LUT University, Lappeenranta
+  city: Lappeenranta
+  city_sv: Villmanstrand
+- name: Algo
+  url: https://www.algojkl.com/
+  university: Jyväskylän yliopisto
+  university_sv: Jyväskylä universitet
+  university_en: University of Jyväskylä
+  city: Jyväskylä
+- name: Sosa
+  url: https://www.sosa.fi/
+  university: LUT-yliopisto, Lahti
+  university_sv: LUT-universitetet, Lahtis
+  university_en: LUT University, Lahti
+  city: Lahti
+  city_sv: Lahtis
+- name: Tutti
+  url: https://www.tutti.fi/
+  university: Vaasan yliopisto
+  university_sv: Vasa universitet
+  university_en: University of Vaasa
+  city: Vaasa
+  city_sv: Vasa

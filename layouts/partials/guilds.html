@@ -1,0 +1,21 @@
+{{- /* Directory-style listing of the member guilds (data/guilds.yaml), in the language of the page. */ -}}
+{{ with hugo.Data.guilds }}
+{{ $lang := site.Language.Lang }}
+<div class="dir">
+  <div class="dir-bar data" aria-hidden="true">tty / guilds/</div>
+  <table class="dir-table">
+    <caption class="sr-only">{{ site.Params.guildsTitle }}</caption>
+    <thead>
+      <tr><th scope="col">{{ site.Params.colGuild }}</th><th scope="col">{{ site.Params.colUniversity }}</th><th scope="col">{{ site.Params.colCity }}</th></tr>
+    </thead>
+    <tbody>
+      {{ range sort . "name" }}
+      {{ $uni := or (index . (printf "university_%s" $lang)) .university }}
+      {{ $city := or (index . (printf "city_%s" $lang)) .city }}
+      <tr><th scope="row"><a class="data" href="{{ .url }}">{{ lower .name }}/</a></th><td>{{ $uni }}</td><td class="data">{{ $city }}</td></tr>
+      {{ end }}
+    </tbody>
+  </table>
+  <p class="dir-foot data">{{ len . }} {{ site.Params.foldersCount }}</p>
+</div>
+{{ end }}

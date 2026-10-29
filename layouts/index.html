@@ -1,56 +1,71 @@
 {{ define "main" }}
 
-<h1>{{ site.Params.heroTitle }}</h1>
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-text">
+      <h1>{{ site.Params.heroText1 }}</h1>
+      <p class="hero-links">
+        <a class="btn" href="{{ relLangURL "join/" }}">{{ site.Params.joinLabel }}</a>
+        <a class="more data" href="{{ relLangURL "about/" }}">{{ site.Params.heroMore }}</a>
+      </p>
+      {{ with hugo.Data.guilds }}<p class="fact data">{{ printf site.Params.factLine (len .) }}</p>{{ end }}
+    </div>
+    {{ partial "guilds.html" . }}
+  </div>
+</section>
 
-<p>
-{{ site.Params.heroText1 }}
- <a href="about/">
-{{ site.Params.heroText2 }}</a>
-</p>
-<br/>
+<section class="section">
+  <h2>{{ site.Params.purposeTitle }}</h2>
+  <div class="prose">
+  {{ partial "purpose.html" . }}
+  </div>
+</section>
 
-<!-- Only display the three latest posts if there are any -->
-{{ with .Site.GetPage "/posts" }}
-    {{ $posts := first 3 (sort .Data.Pages "Date" "desc" (where .Pages ".Params.private" "!=" true)) }}
-    {{ $postsCount := len $posts }}
-
-    {{ if ge $postsCount 1 }}
-        <h1>{{ site.Params.latestPosts }}</h1>
-
-        <div class="posts-list">
-            {{ range first 3 (sort .Data.Pages "Date" "desc" (where .Pages ".Params.private" "!=" true)) }}
-                <div class="post">
-                    <p>
-                        <div class="date">{{ .PublishDate.Format "2.1.2006" }}</div>
-                        <h1><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h1>
-                        {{ .Summary }}
-                    </p>
-                </div>    
-            {{ end }}
-        </div>
-    {{ end }}
+{{ with .Site.GetPage "/events" }}
+{{ with partial "events.html" . }}
+<section class="section">
+  <h2>{{ site.Params.eventsTitle }}</h2>
+  {{ . }}
+</section>
+{{ end }}
 {{ end }}
 
-<!-- Only display the three latest photos if there are any -->
+{{ with .Site.GetPage "/posts" }}
+  {{ $posts := first 3 (sort (where .Pages ".Params.private" "!=" true) "Date" "desc") }}
+  {{ if ge (len $posts) 1 }}
+  <section class="section">
+    <h2>{{ site.Params.latestPosts }}</h2>
+    <ul class="post-list">
+      {{ range $posts }}
+      <li>
+        <time class="data" datetime="{{ .PublishDate.Format "2006-01-02" }}">{{ .PublishDate.Format "2.1.2006" }}</time>
+        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        <div class="summary">{{ .Summary }}</div>
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+{{ end }}
+
 {{ with .Site.GetPage "/photos" }}
-    {{ $photos := first 3 (sort .Data.Pages "Date" "desc") }}
-    {{ $photosCount := len $photos }}
-
-    {{ if ge $photosCount 1 }}
-        <h1>{{ site.Params.latestPhotos }}</h1>
-
-        <div class="image-grid">
-            {{ range first 3 (sort .Data.Pages "Date" "desc") }}
-                <a href="{{ .Permalink }}" title="{{ .Title }}">
-                {{ $image := .Page.Resources.GetMatch .Params.image }}
-                {{ with $image }}
-                    {{ $thumb := .Resize "600x" }}
-                    <img src="{{ $thumb.RelPermalink }}" alt="{{ .Title }}" class="img-responsive">
-                {{end}}
-                </a>
-            {{ end }}
-        </div>
-    {{ end }}
+  {{ $photos := first 3 (sort .Data.Pages "Date" "desc") }}
+  {{ if ge (len $photos) 1 }}
+  <section class="section">
+    <h2>{{ site.Params.latestPhotos }}</h2>
+    <div class="image-grid">
+      {{ range $photos }}
+        <a href="{{ .Permalink }}" title="{{ .Title }}">
+        {{ $image := .Page.Resources.GetMatch .Params.image }}
+        {{ with $image }}
+          {{ $thumb := .Resize "600x" }}
+          <img src="{{ $thumb.RelPermalink }}" alt="{{ .Title }}" class="img-responsive">
+        {{end}}
+        </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
 {{ end }}
 
 {{ end }}

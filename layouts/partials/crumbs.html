@@ -1,0 +1,8 @@
+{{ $f := partial "curfile.html" . }}
+<nav class="crumbs data" aria-label="{{ site.Params.crumbLabel }}">
+  <ol>
+    <li>{{ $f.dir }}</li>
+    {{ with $f.mid }}<li>{{ . }}</li>{{ end }}
+    <li aria-current="page">{{ $f.name }}</li>
+  </ol>
+</nav>

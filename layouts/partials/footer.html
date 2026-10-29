@@ -1,45 +1,25 @@
-{{ $l := $.Site.Language.Lang }}
-<div class="footer">
+{{ $l := site.Language.Lang }}
+<footer class="site-footer">
   <div class="footer-cols">
-    <div class="footer-col">
-      <h4>{{ if eq $l "fi" }}yhdistys{{ else if eq $l "sv" }}förening{{ else }}organisation{{ end }}</h4>
-      <p>
-        Tietoteekkariyhdistys ry<br />
-        {{ if eq $l "fi" }}Y-tunnus{{ else if eq $l "sv" }}FO-nummer{{ else }}Business ID{{ end }}:
-        3381706-8
-      </p>
+    <div>
+      <p class="k">Tietoteekkariyhdistys ry</p>
+      <p>{{ if eq $l "fi" }}Y-tunnus{{ else if eq $l "sv" }}FO-nummer{{ else }}Business ID{{ end }}: <span class="data">3381706-8</span></p>
     </div>
-    <div class="footer-col">
-      <h4>{{ if eq $l "fi" }}osoite{{ else if eq $l "sv" }}adress{{ else }}address{{ end }}</h4>
-      <p>
-        Konemiehentie 2<br />
-        02150 Espoo
-      </p>
+    <div>
+      <p class="k">{{ if eq $l "fi" }}Osoite{{ else if eq $l "sv" }}Adress{{ else }}Address{{ end }}</p>
+      <p>Konemiehentie 2<br>02150 Espoo</p>
     </div>
-    <div class="footer-col">
-      <h4>Google Workspace admin</h4>
-      <p>georgi.horosh@tietoteekkariyhdistys.fi</p>
-    </div>
-    <div class="footer-col">
-      <h4>{{ if eq $l "fi" }}kieli{{ else if eq $l "sv" }}språk{{ else }}language{{ end }}</h4>
-      <nav class="terminal-menu">
-        <ul>
-          {{ range $.Site.Home.AllTranslations }}
-          <li>
-            <a href="{{ .RelPermalink }}" typeof="ListItem"
-              >{{ .Language.LanguageName }}</a
-            >
-          </li>
-          {{ end }}
-        </ul>
-      </nav>
+    <div>
+      <p class="k">{{ site.Params.contactTitle }}</p>
+      <p><a class="data" href="mailto:hallitus@tietoteekkariyhdistys.fi">hallitus@tietoteekkariyhdistys.fi</a></p>
     </div>
   </div>
-  <p class="footer-credit">
-    © Tietoteekkariyhdistys ry. Powered by
-    <a href="https://gohugo.io/">Hugo</a> with
-    <a href="https://github.com/mrmierzejewski/hugo-theme-console/"
-      >Console Theme</a
-    >.
-  </p>
-</div>
+  <nav class="footer-links" aria-label="{{ site.Params.footerNav }}">
+    <a href="{{ relLangURL "contact/" }}">{{ site.Params.contactTitle }}</a>
+    <a href="{{ relLangURL "documents/" }}">{{ site.Params.documentsTitle }}</a>
+    <a href="{{ relLangURL "privacy/" }}">{{ site.Params.privacyTitle }}</a>
+    <a href="{{ relLangURL "events/" }}">{{ site.Params.eventsNav }}</a>
+  </nav>
+  <p class="footer-credit">{{ site.Params.officialSite }}</p>
+  <p class="footer-credit">© Tietoteekkariyhdistys ry. Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+</footer>

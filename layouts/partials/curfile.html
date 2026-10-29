@@ -1,0 +1,26 @@
+{{- /* Works out the "file" the current page is in the explorer. Returns dict: dir, mid (optional parent), name. */ -}}
+{{- $p := . -}}
+{{- $lang := site.Language.Lang -}}
+{{- $cur := strings.TrimSuffix "/" $p.RelPermalink -}}
+{{- $dir := "tty" -}}
+{{- $mid := "" -}}
+{{- $name := "" -}}
+{{- $found := false -}}
+{{- range site.Params.tree -}}
+  {{- $d := .dir -}}
+  {{- range .files -}}
+    {{- $u := strings.TrimSuffix "/" (cond (default false .abs) (relURL .path) (relLangURL .path)) -}}
+    {{- if eq $u $cur -}}{{- $name = index .name $lang -}}{{- $dir = $d -}}{{- $found = true -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $found -}}
+  {{- $base := $p.Title | urlize -}}{{- with $p.File -}}{{- $base = .ContentBaseName -}}{{- end -}}{{- $name = printf "%s.md" $base -}}
+  {{- if eq $p.Section "events" -}}
+    {{- $dir = "events" -}}
+  {{- else if $p.Section -}}
+    {{- range site.Params.tree -}}{{- range .files -}}
+      {{- if eq (strings.TrimSuffix "/" (relLangURL .path)) (strings.TrimSuffix "/" (relLangURL (printf "%s/" $p.Section))) -}}{{- $mid = strings.TrimSuffix ".md" (index .name $lang) -}}{{- end -}}
+    {{- end -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return dict "dir" $dir "mid" $mid "name" $name -}}

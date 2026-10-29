@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - main
+  schedule:
+    # Daily rebuild so past events drop off the site
+    - cron: "0 3 * * *"
   workflow_dispatch:
 permissions:
   contents: read

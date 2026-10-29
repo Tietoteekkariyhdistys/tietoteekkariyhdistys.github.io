@@ -1,0 +1,7 @@
+{{ define "main" }}
+<div class="page">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  {{ with partial "events.html" . }}{{ . }}{{ else }}<p>{{ site.Params.noEvents }}</p>{{ end }}
+</div>
+{{ end }}

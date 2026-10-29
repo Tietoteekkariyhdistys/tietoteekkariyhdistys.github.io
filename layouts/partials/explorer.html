@@ -1,0 +1,46 @@
+{{- /* Sidebar: wordmark, file tree (folders are <details>, no JS needed), language switch, contact. */ -}}
+{{ $cur := strings.TrimSuffix "/" .RelPermalink }}
+{{ $lang := site.Language.Lang }}
+{{ $curfile := partial "curfile.html" . }}
+<aside class="sidebar" aria-label="{{ site.Params.explorerTitle }}">
+  {{ partial "wordmark.html" . }}
+  <details class="explorer-nav">
+    <summary><span class="ex-label">{{ site.Params.explorerTitle }}</span></summary>
+    <nav class="tree" aria-label="{{ site.Params.mainNav }}">
+      {{ range site.Params.tree }}
+      {{ $dir := .dir }}
+      {{ $kind := .kind }}
+      {{ $files := .files }}
+      {{ $hasCur := false }}
+      {{ range $files }}{{ if eq (strings.TrimSuffix "/" (cond (default false .abs) (relURL .path) (relLangURL .path))) $cur }}{{ $hasCur = true }}{{ end }}{{ end }}
+      {{ if eq $dir $curfile.dir }}{{ $hasCur = true }}{{ end }}
+      <details class="folder"{{ if or $hasCur (eq $dir "tty") }} open{{ end }}>
+        <summary>{{ $dir }}/</summary>
+        <ul>
+          {{ range $files }}
+          {{ $href := cond (default false .abs) (relURL .path) (relLangURL .path) }}
+          {{ $isCur := eq (strings.TrimSuffix "/" $href) $cur }}
+          {{ $isParent := and (not $isCur) .path (hasPrefix $cur (strings.TrimSuffix "/" $href)) (ne $cur "") }}
+          <li><a href="{{ $href }}"{{ if $isCur }} class="current" aria-current="page"{{ else if $isParent }} class="parent" aria-current="true"{{ end }}>{{ index .name $lang }}</a></li>
+          {{ end }}
+          {{ if eq $kind "guilds" }}
+          {{ range sort hugo.Data.guilds "name" }}
+          <li><a class="ext" href="{{ .url }}"{{ with (or (index . (printf "university_%s" $lang)) .university) }} title="{{ . }}"{{ end }}>{{ lower .name }}<span aria-hidden="true" class="arrow"> ↗</span></a></li>
+          {{ end }}
+          {{ end }}
+          {{ if eq $kind "events" }}
+          {{ $today := time.AsTime (now.Format "2006-01-02") "Europe/Helsinki" }}{{ with site.GetPage "/events" }}{{ range sort (where .RegularPages "Date" "ge" $today) "Date" "asc" }}
+          {{ $isEv := eq (strings.TrimSuffix "/" .RelPermalink) $cur }}
+          <li><a href="{{ .RelPermalink }}"{{ if $isEv }} class="current" aria-current="page"{{ end }}>{{ .File.ContentBaseName }}.md</a></li>
+          {{ end }}{{ end }}
+          {{ end }}
+        </ul>
+      </details>
+      {{ end }}
+    </nav>
+  </details>
+  <div class="side-foot">
+    {{ partial "langswitch.html" . }}
+    <p class="side-contact"><span class="k">{{ site.Params.contactTitle | lower }}</span><br><a class="data" href="mailto:hallitus@tietoteekkariyhdistys.fi">hallitus@tietoteekkariyhdistys.fi</a></p>
+  </div>
+</aside>

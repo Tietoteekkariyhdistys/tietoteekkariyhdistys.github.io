@@ -1,0 +1,7 @@
+{{- /*
+  LOGO SLOT. The sidebar shows a text wordmark (the site title) for now.
+  To use a logo later: put the file in static/ (for example static/logo.svg) and replace the
+  <span> below with  <img src="{{ "logo.svg" | relURL }}" alt="{{ site.Title }}" height="32">
+  (keep the alt text so the link still has a name). Set the red of the logo in --red in assets/css/main.css.
+*/ -}}
+<a class="wordmark" href="{{ relLangURL "" }}"><span>{{ site.Title }}</span></a>
