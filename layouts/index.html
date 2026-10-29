@@ -8,16 +8,17 @@
         <a class="btn" href="{{ relLangURL "join/" }}">{{ site.Params.joinLabel }}</a>
         <a class="more data" href="{{ relLangURL "about/" }}">{{ site.Params.heroMore }}</a>
       </p>
-      {{ with hugo.Data.guilds }}<p class="fact data">{{ printf site.Params.factLine (len .) }}</p>{{ end }}
+      <div class="hero-purpose">
+        <h2>{{ site.Params.purposeTitle }}</h2>
+        <div class="prose">
+        <p>{{ site.Params.purposeText }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-bylaws prose">
+      {{ partial "purpose-links.html" . }}
     </div>
     {{ partial "guilds.html" . }}
-  </div>
-</section>
-
-<section class="section">
-  <h2>{{ site.Params.purposeTitle }}</h2>
-  <div class="prose">
-  {{ partial "purpose.html" . }}
   </div>
 </section>
 

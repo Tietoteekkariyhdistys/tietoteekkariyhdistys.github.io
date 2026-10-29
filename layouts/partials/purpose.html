@@ -1,5 +1,2 @@
 <p>{{ site.Params.purposeText }}</p>
-<p class="inline-links">
-  <a href="{{ relURL "bylaws/" }}">{{ site.Params.bylawsLink }}</a>
-  {{- with site.Params.bylawsPdf }} · <a href="{{ . | relURL }}">PDF</a>{{ end }}
-</p>
+{{ partial "purpose-links.html" . }}
