@@ -20,7 +20,7 @@ It is recommended to at least read the [Hugo Quick Start](https://gohugo.io/gett
 
 - `archetypes/` define the front matter (metadata) different pages get when they are created. Currently there is only the default archetype for all pages.
 - All content is in `content/` as Markdown files. Only basic Markdown is supported.
-- Posts can be found `content/posts/` and photos in `content/photos/`.
+- Posts can be found `content/posts/`.
 - Layouts are defined in `layouts/` or `themes/hugo-theme-console/layouts/`. If a file with the same name is present in `layouts/`, it will override the theme layout file (which is great for customization).
 - `layouts/_default/` includes the defaults for different types of pages which have no named layouts. `baseof.html` is the root layout for other layouts. `list.html` is the layout for the Posts page.
 - `layouts/partials/` includes partial layouts used by actual page layouts. You can think of them as "UI components".
@@ -31,14 +31,14 @@ It is recommended to at least read the [Hugo Quick Start](https://gohugo.io/gett
 
 - Defined between two sets of `+++` at the beginning of the page file.
 - Basically only the `title` front matter is mandatory since it's used to display page titles by the browser.
-- Named layouts can be set with the front matter `type`. E.g. `type = "gallery"` which makes a page use the `layouts/gallery/` layouts instead of a default layout (like photos do).
-- As long as a page's/post's/photo's front matter has `draft = true`, it will not be included in the production build of the website. This repository includes a couple of example photos and one example post as drafts to give pointers for development.
+- Named layouts can be set with the front matter `type`, which makes a page use the layouts in `layouts/<type>/` instead of a default layout.
+- As long as a page's/post's front matter has `draft = true`, it will not be included in the production build of the website. This repository includes one example post as a draft to give pointers for development.
 
 ### Translations
 
-- For Finnish pages, use `index.fi.md`. For Swedish pages, use `index.sv.md`. For English pages, use `index.en.md`. Place all in the same directory for one page/post/photo.
+- For Finnish pages, use `index.fi.md`. For Swedish pages, use `index.sv.md`. For English pages, use `index.en.md`. Place all in the same directory for one page/post.
 - If a language file for the selected language does not exist, links to that page in the selected language will not work.
-- Posts and photos will only appear in lists for the languages they have language files for, so it's possible to make some posts only in Finnish and others in all three languages for example.
+- Posts will only appear in lists for the languages they have language files for, so it's possible to make some posts only in Finnish and others in all three languages for example.
 - Remember to update all existing language files for a page when updating its Finnish version!
 - The translated texts for the homepage (`layouts/index.html`) can be found in `hugo.toml` under each language's parameters section, e.g. `[languages.sv.params]`. New parameters can be freely added but remember to add them for each language!
 
@@ -46,7 +46,6 @@ It is recommended to at least read the [Hugo Quick Start](https://gohugo.io/gett
 
 - Create a new page with `hugo new name-of-page/index.fi.md`. It's also recommended to create the other language versions as well: `hugo new name-of-page/index.sv.md` and `hugo new name-of-page/index.en.md`. This will create a new subdirectory and file in `content/` with the applicable front matter.
 - Create a new news post with `hugo new posts/name-of-post/index.fi.md`. Also create the `index.sv.md` and `index.en.md` files if you want the post to appear in the Swedish and English versions of the site!
-- Create a new photo in the gallery with `hugo new photos/name-of-photo/index.fi.md`. Also create the `index.sv.md` and `index.en.md` files if you want the photo to appear in the Swedish and English versions of the site!
 - To add an item to the navbar, add a new section under `params` in `hugo.toml` (the URL should correspond to the page's directory in `content/`):
   
     ```toml

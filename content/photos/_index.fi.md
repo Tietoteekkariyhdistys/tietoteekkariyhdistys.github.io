@@ -1,4 +1,0 @@
-+++
-title = "Valokuvat"
-type = "gallery"
-+++

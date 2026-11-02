@@ -49,24 +49,4 @@
   {{ end }}
 {{ end }}
 
-{{ with .Site.GetPage "/photos" }}
-  {{ $photos := first 3 (sort .Data.Pages "Date" "desc") }}
-  {{ if ge (len $photos) 1 }}
-  <section class="section">
-    <h2>{{ site.Params.latestPhotos }}</h2>
-    <div class="image-grid">
-      {{ range $photos }}
-        <a href="{{ .Permalink }}" title="{{ .Title }}">
-        {{ $image := .Page.Resources.GetMatch .Params.image }}
-        {{ with $image }}
-          {{ $thumb := .Resize "600x" }}
-          <img src="{{ $thumb.RelPermalink }}" alt="{{ .Title }}" class="img-responsive">
-        {{end}}
-        </a>
-      {{ end }}
-    </div>
-  </section>
-  {{ end }}
-{{ end }}
-
 {{ end }}

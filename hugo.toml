@@ -46,9 +46,6 @@ timeZone = 'Europe/Helsinki'
     path = "join/"
     name = { fi = "liity.md", sv = "bli-medlem.md", en = "join.md" }
     [[params.tree.files]]
-    path = "photos/"
-    name = { fi = "valokuvat.md", sv = "foton.md", en = "photos.md" }
-    [[params.tree.files]]
     path = "contact/"
     name = { fi = "yhteystiedot.md", sv = "kontakt.md", en = "contact.md" }
 
@@ -88,7 +85,6 @@ timeZone = 'Europe/Helsinki'
     title = 'Tietoteekkariyhdistys TTY'
     weight = 1
       [languages.fi.params]
-        noPhotos = "Valokuvia ei ole vielä julkaistu."
         mainNav = "Päävalikko"
         joinLabel = "Liity"
         heroMore = "Lue lisää"
@@ -105,7 +101,6 @@ timeZone = 'Europe/Helsinki'
         heroText1 = "Tietoteekkariyhdistys (TTY) on vuonna 2023 perustettu Suomen tietoteekkarikiltojen kattojärjestö."
         description = "Tietoteekkariyhdistys ry on Suomen tietotekniikan opiskelijoiden kiltojen kattojärjestö, joka ajaa opiskelijoiden etuja valtakunnallisella tasolla."
         latestPosts = "Uusimmat tiedotteet"
-        latestPhotos = "Uusimmat valokuvat"
         noPosts = "Yhtäkään tiedotetta ei ole julkaistu."
         purposeTitle = "Tarkoitus"
         purposeText = "Tietoteekkariyhdistys ry:n tarkoituksena on yhdistää Suomen tietotekniikan diplomi-insinööriksi johtavien koulutusohjelmien opiskelijoita, ajaa heidän opiskeluun liittyviä etujaan valtakunnallisella tasolla ja luoda jäsenilleen merkityksellisiä elämänkokemuksia. Järjestämme tapahtumia, juhlia ja excursioita, toimimme yhteistyössä kiltojen, ylioppilaskuntien, yliopistojen ja yritysten kanssa sekä tuemme kiltojen välistä viestintää."
@@ -132,7 +127,6 @@ timeZone = 'Europe/Helsinki'
     title = 'Tietoteekkariyhdistys TTY'
     weight = 3
       [languages.sv.params]
-        noPhotos = "Inga foton har publicerats ännu."
         mainNav = "Huvudmeny"
         joinLabel = "Bli medlem"
         heroMore = "Läs mer"
@@ -149,7 +143,6 @@ timeZone = 'Europe/Helsinki'
         heroText1 = "Tietoteekkariyhdistys (TTY) är en takförening för datateknologämnesföreningar i Finland. TTY grundades år 2023."
         description = "Tietoteekkariyhdistys ry är en takförening för datateknologämnesföreningar i Finland och driver studerandenas intressen på riksnivå."
         latestPosts = "Senaste nyheterna"
-        latestPhotos = "Senaste fotona"
         noPosts = "Inga nyheter har publicerats."
         purposeTitle = "Ändamål"
         purposeText = "Tietoteekkariyhdistys ry:s ändamål är att förena studerande på utbildningslinjer som leder till diplomingenjörsexamen inom datateknik i Finland, förespråka deras studierelaterade intressen på riksnivå och skapa betydelsefulla livserfarenheter för sina medlemmar. Vi ordnar evenemang, fester och excursioner, samarbetar med ämnesföreningar, studentkårer, universitet och företag samt stöder kommunikationen mellan ämnesföreningarna."
@@ -176,7 +169,6 @@ timeZone = 'Europe/Helsinki'
     title = 'Tietoteekkariyhdistys TTY'
     weight = 2
       [languages.en.params]
-        noPhotos = "No photos have been published yet."
         mainNav = "Main menu"
         joinLabel = "Join"
         heroMore = "Read more"
@@ -193,7 +185,6 @@ timeZone = 'Europe/Helsinki'
         heroText1 = "Tietoteekkariyhdistys (TTY) is an umbrella organization for Finnish IT student guilds, founded in 2023."
         description = "Tietoteekkariyhdistys ry is an umbrella association of Finnish IT student guilds, advocating for students at the national level."
         latestPosts = "Latest posts"
-        latestPhotos = "Latest photos"
         noPosts = "No posts have been published."
         purposeTitle = "Purpose"
         purposeText = "Tietoteekkariyhdistys ry is a non-profit association that brings together students of Finnish computer science and IT engineering (M.Sc. Tech.) degree programmes, advocates for their study-related interests at the national level, and creates meaningful experiences for its members. We organize events, gatherings and excursions, cooperate with student guilds, student unions, universities and companies, and support communication between the guilds."
