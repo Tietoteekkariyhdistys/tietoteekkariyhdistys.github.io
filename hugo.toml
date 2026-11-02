@@ -18,6 +18,8 @@ timeZone = 'Europe/Helsinki'
 
 [params]
   bylawsPdf = "saannot.pdf"
+  instagram = "https://www.instagram.com/tietoteekkariyhdistys"
+  instagramHandle = "@tietoteekkariyhdistys"
 
   # Explorer tree. Folders in order; files link to pages (path is relative to the language root;
   # abs = true links to the single-language page without the language prefix).
@@ -118,6 +120,7 @@ timeZone = 'Europe/Helsinki'
         filesCount = "tiedostoa"
         kvRole = "rooli:"
         kvName = "nimi:"
+        kvEmail = "sähköposti:"
         langLabel = "Kieli"
         officialSite = "Tietoteekkariyhdistys ry:n virallinen verkkosivusto"
 
@@ -161,6 +164,7 @@ timeZone = 'Europe/Helsinki'
         filesCount = "filer"
         kvRole = "roll:"
         kvName = "namn:"
+        kvEmail = "e-post:"
         langLabel = "Språk"
         officialSite = "Tietoteekkariyhdistys ry:s officiella webbplats"
 
@@ -204,6 +208,7 @@ timeZone = 'Europe/Helsinki'
         filesCount = "files"
         kvRole = "role:"
         kvName = "name:"
+        kvEmail = "email:"
         langLabel = "Language"
         officialSite = "Official website of Tietoteekkariyhdistys ry"
 

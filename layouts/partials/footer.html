@@ -12,6 +12,7 @@
     <div>
       <p class="k">{{ site.Params.contactTitle }}</p>
       <p><a class="data" href="mailto:hallitus@tietoteekkariyhdistys.fi">hallitus@tietoteekkariyhdistys.fi</a></p>
+      {{ with site.Params.instagram }}<p>Instagram: <a class="data" href="{{ . }}" rel="me noopener">{{ site.Params.instagramHandle }}</a></p>{{ end }}
     </div>
   </div>
   <nav class="footer-links" aria-label="{{ site.Params.footerNav }}">

@@ -42,5 +42,6 @@
   <div class="side-foot">
     {{ partial "langswitch.html" . }}
     <p class="side-contact"><span class="k">{{ site.Params.contactTitle | lower }}</span><br><a class="data" href="mailto:hallitus@tietoteekkariyhdistys.fi">hallitus@tietoteekkariyhdistys.fi</a></p>
+    {{ with site.Params.instagram }}<p class="side-contact side-social"><span class="k">instagram</span><br><a class="data" href="{{ . }}" rel="me noopener">{{ site.Params.instagramHandle }}</a></p>{{ end }}
   </div>
 </aside>

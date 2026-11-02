@@ -31,6 +31,9 @@
         <dl class="kv data">
           <div><dt>{{ site.Params.kvRole }}</dt><dd>{{ .role }}</dd></div>
           <div><dt>{{ site.Params.kvName }}</dt>{{ range split (replaceRE $sep "|" .name) "|" }}<dd class="strong">{{ . }}</dd>{{ end }}</div>
+          {{- /* No email key: fall back to the board address. email = "" shows no address. */ -}}
+          {{ $mail := cond (isset . "email") .email "hallitus@tietoteekkariyhdistys.fi" }}
+          {{ with $mail }}<div><dt>{{ site.Params.kvEmail }}</dt><dd><a href="mailto:{{ . }}">{{ . }}</a></dd></div>{{ end }}
         </dl>
       </section>
       {{ end }}
