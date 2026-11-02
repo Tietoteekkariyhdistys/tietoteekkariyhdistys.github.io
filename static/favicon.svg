@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="155 155 548 548">
+  <style>
+    .k { fill: #000; }
+  </style>
+  <rect class="k" x="161" y="168" width="154" height="154"/>
+  <rect class="k" x="351" y="168" width="154" height="154"/>
+  <rect x="536" y="164" width="161" height="161" fill="#D5222F"/>
+  <rect class="k" x="160" y="352" width="154" height="154"/>
+  <rect class="k" x="350" y="352" width="154" height="154"/>
+  <rect class="k" x="540" y="352" width="154" height="154"/>
+  <rect x="160" y="537" width="154" height="154" fill="#FDBCC0"/>
+  <path class="k" d="M314 537 V691 H160 Z"/>
+  <rect class="k" x="350" y="537" width="154" height="154"/>
+</svg>

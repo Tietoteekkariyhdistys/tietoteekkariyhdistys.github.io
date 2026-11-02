@@ -3,14 +3,14 @@
    lighter red used for links, heading markers and small text on the dark page. */
 
 :root {
-    --ink: #F2F2F2;
-    --muted: #A8A8A8;
-    --red: #C8102E;
-    --red-text: #FF4A5C;
-    --paper: #0A0A0A;
-    --soft: #121212;
-    --side: #0E0E0E;
-    --rule: #2A2A2A;
+    --ink: #D2D2D2;
+    --muted: #979797;
+    --red: #811B28;
+    --red-text: #811B28;
+    --paper: #111;
+    --soft: #171717;
+    --side: #0d0d0d;
+    --rule: #2a2a2a;
     --on-red: #FFFFFF;
     --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
@@ -21,7 +21,11 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; color-scheme: dark; scrollbar-width: thin; scrollbar-color: #3a3a3a var(--paper); }
+html::-webkit-scrollbar { width: 10px; height: 10px; }
+html::-webkit-scrollbar-track { background: var(--paper); }
+html::-webkit-scrollbar-thumb { background: #3a3a3a; border-radius: 5px; border: 2px solid var(--paper); }
+html::-webkit-scrollbar-thumb:hover { background: #555; }
 
 body {
     margin: 0;
@@ -59,6 +63,9 @@ h3 { font-size: 1.1rem; margin-top: 1.5rem; }
 p, ul, ol { margin: 0 0 1rem; }
 strong { font-weight: 700; }
 img, .img-responsive { max-width: 100%; height: auto; }
+/* a markdown image on its own line (the TTY logo on the about page) is centred across the full page width, not just the text column */
+.page > p:has(> img:only-child) { max-width: none; }
+.page p > img:only-child { display: block; margin: 2rem auto; width: 58.333%; min-width: 10rem; max-width: 100%; }
 figure { margin: 1rem 0; }
 
 code, .data { font-family: var(--mono); font-size: 0.9em; }
@@ -90,11 +97,20 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
     align-self: start;
     height: calc(100vh - var(--bar-h));
     overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
     display: flex;
     flex-direction: column;
     background: var(--side);
     border-right: 1px solid var(--rule);
 }
+
+/* sidebar scrollbar stays hidden until the sidebar is hovered or focused */
+.sidebar:hover, .sidebar:focus-within { scrollbar-color: #3a3a3a transparent; }
+.sidebar::-webkit-scrollbar { width: 6px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.sidebar::-webkit-scrollbar-thumb { background: transparent; border-radius: 3px; }
+.sidebar:hover::-webkit-scrollbar-thumb, .sidebar:focus-within::-webkit-scrollbar-thumb { background: #3a3a3a; }
 
 .wordmark { display: block; padding: 1.1rem 1rem; color: var(--ink); font-weight: 700; font-size: 1.05rem; line-height: 1.25; text-decoration: none; border-bottom: 1px solid var(--rule); }
 .wordmark img { display: block; height: 2rem; width: auto; }
@@ -128,8 +144,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
     text-decoration: none;
 }
 .tree a:focus-visible, .tree .folder > summary:focus-visible, .explorer-nav > summary:focus-visible { outline-offset: -3px; }
-.tree a:hover { color: var(--ink); background: #181818; }
-.tree a.current { color: var(--ink); background: #1b1b1b; border-left-color: var(--red); }
+.tree a:hover { color: var(--ink); background: #1b1b1b; }
+.tree a.current { color: var(--ink); background: #1f1f1f; border-left-color: var(--red); }
 .tree a.parent { color: var(--ink); }
 .tree .arrow { color: var(--red-text); }
 
@@ -227,7 +243,7 @@ main { flex: 1; width: 100%; max-width: 62rem; padding: 1.25rem 2rem 1rem; }
 .dir-table tbody th a { color: var(--ink); text-decoration: none; }
 .dir-table tbody td { color: var(--muted); }
 .dir-table tbody tr:hover th, .dir-table tbody tr:focus-within th { border-left-color: var(--red); }
-.dir-table tbody tr:hover, .dir-table tbody tr:focus-within { background: #181818; }
+.dir-table tbody tr:hover, .dir-table tbody tr:focus-within { background: #1b1b1b; }
 .dir-table tbody tr:hover a, .dir-table tbody a:focus-visible { color: var(--red-text); }
 .dir-table tbody a:focus-visible { outline-offset: -2px; }
 .dir-foot { margin: 0; padding: 0.3rem 1rem; background: var(--side); color: var(--muted); font-size: 0.75rem; }
@@ -258,8 +274,8 @@ main { flex: 1; width: 100%; max-width: 62rem; padding: 1.25rem 2rem 1rem; }
 .board-tree legend::before { content: "▾"; display: inline-block; width: 1.1rem; color: var(--muted); font-weight: 400; }
 .board-tree input { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; pointer-events: none; }
 .board-tree label { display: block; padding: 0.35rem 1rem 0.35rem 2.1rem; border-left: 3px solid transparent; color: var(--ink); cursor: pointer; }
-.board-tree label:hover { background: #181818; }
-.board-tree input:checked + label { background: #1b1b1b; border-left-color: var(--red); }
+.board-tree label:hover { background: #1b1b1b; }
+.board-tree input:checked + label { background: #1f1f1f; border-left-color: var(--red); }
 .board-tree input:focus-visible + label { outline: 3px solid var(--ink); outline-offset: -3px; }
 .board-tree .fname { display: block; }
 .board-tree .who { display: block; color: var(--muted); font-size: 0.75rem; overflow-wrap: anywhere; }
