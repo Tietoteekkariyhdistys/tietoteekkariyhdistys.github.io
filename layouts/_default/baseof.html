@@ -5,6 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} – {{ .Site.Title }}{{ end }}</title>
     {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+    {{- /* Link preview card (Telegram, WhatsApp, Discord, Slack, ...) */ -}}
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+    {{ with .Site.Params.description }}<meta property="og:description" content="{{ . }}">{{ end }}
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:locale" content="{{ replace .Site.LanguageCode "-" "_" }}">
+    <meta property="og:image" content="{{ "img/share.png" | absURL }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Tietoteekkariyhdistys TTY ry logo">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <meta name="googlebot" content="index,follow,snippet,archive">
