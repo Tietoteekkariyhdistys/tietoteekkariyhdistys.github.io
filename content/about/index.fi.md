@@ -1,5 +1,5 @@
 +++
-title = "Mikä ihmeen TTY?"
+title = "Yhdistys ja historia"
 +++
 
 Tietoteekkariyhdistys (TTY) on Suomen tietoteekkarien ainejärjestöjen eli kiltojen kattojärjestö. Järjestö perustettiin vuonna 2023 Titeenien Taistoilla Turussa. Yhdistyksen tarkoituksen löydät etusivulta.

@@ -1,5 +1,5 @@
 +++
-title = "Vad är TTY?"
+title = "Vilka vi är och vår historia"
 +++
 
 Tietoteekkariyhdistys (TTY) är Finlands datateknologämnesföreningars takförening. Föreningen grundades i samband med Titeenien Taistot i Åbo 2023. Föreningens ändamål hittar du på framsidan.

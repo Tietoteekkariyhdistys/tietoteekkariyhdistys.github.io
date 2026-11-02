@@ -127,7 +127,7 @@ timeZone = 'Europe/Helsinki'
     languageDirection = 'ltr'
     languageName = 'Svenska'
     title = 'Tietoteekkariyhdistys TTY'
-    weight = 2
+    weight = 3
       [languages.sv.params]
         noPhotos = "Inga foton har publicerats ännu."
         mainNav = "Huvudmeny"
@@ -170,7 +170,7 @@ timeZone = 'Europe/Helsinki'
     languageDirection = 'ltr'
     languageName = 'English'
     title = 'Tietoteekkariyhdistys TTY'
-    weight = 3
+    weight = 2
       [languages.en.params]
         noPhotos = "No photos have been published yet."
         mainNav = "Main menu"
