@@ -9,7 +9,7 @@
       <p class="k">{{ if eq $l "fi" }}Osoite{{ else if eq $l "sv" }}Adress{{ else }}Address{{ end }}</p>
       <p>Konemiehentie 2<br>02150 Espoo</p>
     </div>
-    <div>
+    <div class="footer-contact">
       <p class="k">{{ site.Params.contactTitle }}</p>
       <p><a class="data" href="mailto:hallitus@tietoteekkariyhdistys.fi">hallitus@tietoteekkariyhdistys.fi</a></p>
       {{ with site.Params.instagram }}<p>Instagram: <a class="data" href="{{ . }}" rel="me noopener">{{ site.Params.instagramHandle }}</a></p>{{ end }}

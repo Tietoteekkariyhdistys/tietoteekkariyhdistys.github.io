@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="">
+  <!-- 4n with a background-coloured border (11px) around the kitty and the bow -->
+  <rect width="400" height="400" fill="#484848"/>
+  <rect x="50" y="28" width="92" height="92" fill="#2B2B2B"/>
+  <rect x="154" y="28" width="92" height="92" fill="#2B2B2B"/>
+  <rect x="258" y="28" width="92" height="92" fill="#D5222F"/>
+  <rect x="50" y="132" width="92" height="92" fill="#2B2B2B"/>
+  <rect x="154" y="132" width="92" height="92" fill="#2B2B2B"/>
+  <rect x="258" y="132" width="92" height="92" fill="#2B2B2B"/>
+  <rect x="50" y="236" width="92" height="92" fill="#222222"/>
+  <path d="M50 236 H142 L50 328 Z" fill="#FDBCC0"/>
+  <rect x="154" y="236" width="92" height="92" fill="#2B2B2B"/>
+  <g fill="#484848" stroke="#484848" stroke-width="22" stroke-linejoin="round"><path d="M60 400 C60 310 120 262 200 262 C280 262 340 310 340 400 Z"/><path d="M148 110 L134 58 L190 92 Z M252 110 L266 58 L210 92 Z"/><circle cx="200" cy="170" r="84"/></g>
+  <g fill="#fff"><path d="M60 400 C60 310 120 262 200 262 C280 262 340 310 340 400 Z"/><path d="M148 110 L134 58 L190 92 Z M252 110 L266 58 L210 92 Z"/><circle cx="200" cy="170" r="84"/></g>
+  <g fill="#484848" stroke="#484848" stroke-width="22" stroke-linejoin="round"><path d="M252 100 L210 74 L210 126 Z"/><path d="M252 100 L294 72 L294 128 Z"/><circle cx="252" cy="100" r="13"/></g>
+  <g fill="#D5222F"><path d="M252 100 L210 74 L210 126 Z"/><path d="M252 100 L294 72 L294 128 Z"/><circle cx="252" cy="100" r="13"/></g>
+</svg>

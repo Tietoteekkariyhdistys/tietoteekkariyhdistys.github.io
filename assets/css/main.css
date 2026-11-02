@@ -279,7 +279,8 @@ main { flex: 1; width: 100%; max-width: 62rem; padding: 1.25rem 2rem 1rem; }
 .board-tree input:focus-visible + label { outline: 3px solid var(--ink); outline-offset: -3px; }
 .board-tree .fname { display: block; }
 .board-tree .who { display: block; color: var(--muted); font-size: 0.75rem; overflow-wrap: anywhere; }
-.board-editor { min-width: 0; min-height: 15rem; }
+.board-editor { min-width: 0; min-height: 15rem; display: flex; flex-direction: column; }
+.board-editor .panel { flex: 1; }
 .tabstrip { display: flex; background: var(--side); border-bottom: 1px solid var(--rule); }
 .tabstrip .tab { margin: 0 0 -1px; font-family: var(--mono); font-size: 0.8rem; font-weight: 400; line-height: 1.65; }
 .tabstrip .tab::before { content: none !important; }
@@ -289,6 +290,11 @@ main { flex: 1; width: 100%; max-width: 62rem; padding: 1.25rem 2rem 1rem; }
 .kv dd { grid-column: 2; margin: 0; min-width: 0; overflow-wrap: anywhere; }
 .kv dd.strong { font-weight: 700; }
 .kv a { color: var(--ink); }
+/* Picture windows: one small framed window per person, centred in the space below the details */
+.portraits { flex: 1; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1rem; padding: 1.25rem 0.75rem; }
+.pwin { margin: 0; width: 18rem; max-width: 100%; border: 1px solid var(--rule); background: var(--paper); }
+.pwin-bar { padding: 0.3rem 0.6rem; background: var(--side); border-bottom: 1px solid var(--rule); color: var(--muted); font-size: 0.75rem; line-height: 1.5; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pwin img { display: block; width: 100%; height: auto; }
 .board-foot { grid-column: 1 / -1; margin: 0; padding: 0.3rem 1rem; border-top: 1px solid var(--rule); background: var(--side); color: var(--muted); font-size: 0.75rem; }
 .board-foot a { color: var(--ink); overflow-wrap: anywhere; }
 /* Show only the selected file's panel (needs :has; otherwise all panels stay visible as a list) */
@@ -299,6 +305,8 @@ main { flex: 1; width: 100%; max-width: 62rem; padding: 1.25rem 2rem 1rem; }
 /* Footer */
 .site-footer { padding: 1.5rem 2rem 2rem; border-top: 1px solid var(--rule); font-size: 0.9rem; max-width: 62rem; width: 100%; }
 .footer-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem 2rem; }
+/* The sidebar shows the contact details on wide screens, so the footer repeats them only on small ones */
+@media (min-width: 56.0625rem) { .footer-contact { display: none; } .footer-cols { grid-template-columns: repeat(2, 1fr); } }
 .site-footer .k { font-size: 0.8rem; margin: 0 0 0.35rem; font-family: var(--mono); font-weight: 400; color: var(--muted); }
 .site-footer p { margin: 0; overflow-wrap: anywhere; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; margin: 1.25rem 0 0; font-family: var(--mono); font-size: 0.85rem; }
