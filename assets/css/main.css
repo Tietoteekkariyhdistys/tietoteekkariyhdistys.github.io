@@ -1,12 +1,10 @@
 /* Design tokens. Change colours, fonts and the logo red here only.
-   --red is for buttons, rules and the status bar (white text on it passes AA); --red-text is the
-   lighter red used for links, heading markers and small text on the dark page. */
+   --red is used for buttons, rules, the status bar, links and heading markers. */
 
 :root {
     --ink: #D2D2D2;
     --muted: #979797;
     --red: #811B28;
-    --red-text: #811B28;
     --paper: #111;
     --soft: #171717;
     --side: #0d0d0d;
@@ -37,7 +35,7 @@ body {
     padding-bottom: var(--bar-h);
 }
 
-a { color: var(--red-text); text-underline-offset: 0.15em; }
+a { color: var(--red); text-underline-offset: 0.15em; }
 a:hover { text-decoration-thickness: 2px; }
 
 h1, h2, h3 { font-weight: 700; line-height: 1.25; margin: 0 0 0.75rem; overflow-wrap: break-word; hyphens: auto; }
@@ -51,7 +49,7 @@ h3 { font-size: 1.1rem; margin-top: 1.5rem; }
     content: "#";
     content: "#" / "";
     margin-right: 0.45em;
-    color: var(--red-text);
+    color: var(--red);
     font-family: var(--mono);
     font-weight: 400;
     font-size: 0.8em;
@@ -114,7 +112,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 
 .wordmark { display: block; padding: 1.1rem 1rem; color: var(--ink); font-weight: 700; font-size: 1.05rem; line-height: 1.25; text-decoration: none; border-bottom: 1px solid var(--rule); }
 .wordmark img { display: block; height: 2rem; width: auto; }
-.wordmark:hover { color: var(--red-text); }
+.wordmark:hover { color: var(--red); }
 
 .explorer-nav > summary {
     list-style: none;
@@ -147,7 +145,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .tree a:hover { color: var(--ink); background: #1b1b1b; }
 .tree a.current { color: var(--ink); background: #1f1f1f; border-left-color: var(--red); }
 .tree a.parent { color: var(--ink); }
-.tree .arrow { color: var(--red-text); }
+.tree .arrow { color: var(--red); }
 
 .side-foot { margin-top: auto; padding: 0.85rem 1rem 1rem; border-top: 1px solid var(--rule); font-family: var(--mono); font-size: 0.78rem; color: var(--muted); }
 .side-foot p { margin: 0.6rem 0 0; overflow-wrap: anywhere; }
@@ -155,8 +153,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .side-foot a { color: var(--ink); }
 .lang-switch { display: flex; gap: 0.1rem; margin: 0; padding: 0; list-style: none; }
 .lang-switch li + li::before { content: "·"; margin: 0 0.5rem; color: var(--muted); }
-.lang-switch a { color: var(--muted); text-decoration: none; padding: 0.2rem 0; }
-.lang-switch a:hover { color: var(--red-text); text-decoration: underline; }
+.lang-switch a { display: inline-block; min-width: 1.75rem; text-align: center; color: var(--muted); text-decoration: none; padding: 0.45rem 0.25rem; }
+.lang-switch a:hover { color: var(--red); text-decoration: underline; }
 .lang-switch a[aria-current] { color: var(--ink); font-weight: 700; }
 
 /* Desktop: the explorer is always open (CSS for modern browsers, a tiny script as fallback) */
@@ -197,7 +195,7 @@ main { flex: 1; width: 100%; max-width: 62rem; padding: 1.25rem 2rem 1rem; }
 .page > * { max-width: var(--measure); }
 .page > .board { max-width: none; }
 .page h1 { padding-bottom: 0.75rem; border-bottom: 1px solid var(--rule); margin-bottom: 1.5rem; }
-.page li::marker { color: var(--red-text); }
+.page li::marker { color: var(--red); }
 .page hr { border: 0; border-top: 1px solid var(--rule); }
 .meta { color: var(--muted); font-family: var(--mono); font-size: 0.85rem; }
 
@@ -239,12 +237,14 @@ main { flex: 1; width: 100%; max-width: 62rem; padding: 1.25rem 2rem 1rem; }
 .dir-table { display: table; width: 100%; font-size: 0.85rem; }
 .dir-table thead th { padding: 0.5rem 0.75rem; color: var(--muted); font-family: var(--mono); font-size: 0.68rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; }
 .dir-table th, .dir-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+/* header cells line up with the body cells (the first body cell has a 3px marker border) */
+.dir-table thead th:first-child { padding-left: calc(0.75rem + 3px); }
 .dir-table tbody th { font-weight: 700; white-space: nowrap; border-left: 3px solid transparent; padding-left: 0.75rem; }
 .dir-table tbody th a { color: var(--ink); text-decoration: none; }
 .dir-table tbody td { color: var(--muted); }
 .dir-table tbody tr:hover th, .dir-table tbody tr:focus-within th { border-left-color: var(--red); }
 .dir-table tbody tr:hover, .dir-table tbody tr:focus-within { background: #1b1b1b; }
-.dir-table tbody tr:hover a, .dir-table tbody a:focus-visible { color: var(--red-text); }
+.dir-table tbody tr:hover a, .dir-table tbody a:focus-visible { color: var(--red); }
 .dir-table tbody a:focus-visible { outline-offset: -2px; }
 .dir-foot { margin: 0; padding: 0.3rem 1rem; background: var(--side); color: var(--muted); font-size: 0.75rem; }
 /* Posts and events */
@@ -259,7 +259,7 @@ main { flex: 1; width: 100%; max-width: 62rem; padding: 1.25rem 2rem 1rem; }
 .event-list li:first-child { border-top: 1px solid var(--rule); }
 .event-date { display: inline-block; min-width: 6.5rem; margin-right: 0.5rem; font-family: var(--mono); font-size: 0.9rem; font-weight: 700; }
 .event-meta { display: block; color: var(--muted); font-size: 0.95rem; }
-.event-meta[href] { color: var(--red-text); }
+.event-meta[href] { color: var(--red); }
 
 /* Galleries */
 
@@ -274,7 +274,7 @@ main { flex: 1; width: 100%; max-width: 62rem; padding: 1.25rem 2rem 1rem; }
 .board-tree label:hover { background: #1b1b1b; }
 .board-tree input:checked + label { background: #1f1f1f; border-left-color: var(--red); }
 .board-tree input:focus-visible + label { outline: 3px solid var(--ink); outline-offset: -3px; }
-.board-tree .fname { display: block; }
+.board-tree .fname { display: block; overflow-wrap: anywhere; }
 .board-tree .who { display: block; color: var(--muted); font-size: 0.75rem; overflow-wrap: anywhere; }
 .board-editor { min-width: 0; min-height: 15rem; display: flex; flex-direction: column; }
 .board-editor .panel { flex: 1; }
@@ -283,7 +283,7 @@ main { flex: 1; width: 100%; max-width: 62rem; padding: 1.25rem 2rem 1rem; }
 .tabstrip .tab::before { content: none !important; }
 .kv { margin: 0; padding: 1rem 1.25rem 1.1rem; font-size: 0.88rem; line-height: 1.8; }
 .kv > div { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 0 0.75rem; }
-.kv dt { color: var(--red-text); grid-column: 1; }
+.kv dt { color: var(--red); grid-column: 1; }
 .kv dd { grid-column: 2; margin: 0; min-width: 0; overflow-wrap: anywhere; }
 .kv dd.strong { font-weight: 700; }
 .kv a { color: var(--ink); }
@@ -323,6 +323,7 @@ main { flex: 1; width: 100%; max-width: 62rem; padding: 1.25rem 2rem 1rem; }
     .wordmark { padding: 0.6rem 0.9rem; font-size: 0.95rem; border-bottom: 0; }
     .side-foot { display: contents; }
     .side-foot .lang-switch { grid-row: 1; grid-column: 2; padding: 0 0.9rem; font-family: var(--mono); font-size: 0.8rem; }
+    .lang-switch a { padding: 0.65rem 0.4rem; }
     .side-foot .side-contact { display: none; }
     .explorer-nav { grid-column: 1 / -1; border-top: 1px solid var(--rule); }
     .explorer-nav > summary { padding: 0.55rem 0.9rem; }
@@ -335,12 +336,14 @@ main { flex: 1; width: 100%; max-width: 62rem; padding: 1.25rem 2rem 1rem; }
     .board { grid-template-columns: 1fr; grid-template-rows: auto; }
     .board-tree { border-right: 0; border-bottom: 1px solid var(--rule); }
     .board-editor { min-height: 0; }
-    .board-tree fieldset { display: grid; grid-template-columns: 1fr 1fr; }
+    .board-tree fieldset { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
     .board-tree legend { grid-column: 1 / -1; }
     .board-tree label { padding: 0.3rem 0.6rem 0.3rem 0.75rem; }
     .dir-table { font-size: 0.8rem; }
     .dir-table th, .dir-table td { padding: 0.45rem 0.4rem; }
     .dir-table tbody th { padding-left: 0.5rem; }
+    .dir-table thead th { padding-left: 0.4rem; padding-right: 0.4rem; }
+    .dir-table thead th:first-child { padding-left: calc(0.5rem + 3px); }
     .site-footer { padding: 1rem 0.9rem 1.5rem; }
     .footer-cols { grid-template-columns: 1fr; }
     .event-date { display: block; }
@@ -366,4 +369,34 @@ main { flex: 1; width: 100%; max-width: 62rem; padding: 1.25rem 2rem 1rem; }
     .board { display: block; }
     .kv dt { color: #000; }
     blockquote { background: none; border-left-color: #000; }
+}
+
+/* 404. The scene markup and frames are generated into layouts/404.html (see tools/404/), which also sets
+   --walk and --total (the walk and total animation times) on .stage. */
+.notfound { min-height: calc(100vh - 9rem); }
+.notfound .nf-sub { font-size: 0.5em; font-weight: 400; color: var(--muted); margin-left: 0.5rem; }
+.notfound > .stage { max-width: none; position: relative; overflow: hidden; margin: 1.5rem -2rem 1.5rem; height: 84em; border-bottom: 1px solid var(--rule); font-family: var(--mono); font-size: min(0.34rem, 0.85vw); line-height: 1; }
+.stage pre { margin: 0; padding: 0; border: 0; background: none; font: inherit; line-height: 1; color: var(--ink); }
+.stage .r { color: #D5222F; }
+.stage .m { background: var(--paper); }
+.stage .sign { position: absolute; bottom: 0; left: calc(50% - 90ch); }
+.stage .walker { position: absolute; bottom: 0; left: -96ch; width: 93ch; height: 84em; animation: nf-walk var(--walk) linear forwards; }
+.stage .walker pre { position: absolute; bottom: 0; left: 0; }
+.stage .fr { visibility: hidden; animation-duration: var(--total); animation-timing-function: linear; animation-fill-mode: forwards; }
+.stage .puff { color: var(--muted); opacity: 0; animation: nf-puff 1.4s ease-out forwards; }
+.stage .f-bg { color: var(--muted); }
+.stage .bwisp { position: absolute; bottom: 4em; opacity: 0; color: var(--muted); font-size: 2.4em; line-height: 0.8; animation: nf-wisp 1.6s ease-out forwards; }
+@keyframes nf-walk { to { left: calc(50% + 1.5ch); } }
+@keyframes nf-puff { 0% { opacity: 0; transform: translateY(1.5em) scale(0.7); } 25% { opacity: 0.9; } 100% { opacity: 0; transform: translateY(-4em) scale(1.1); } }
+@keyframes nf-wisp { 0% { opacity: 0; transform: translateY(1em); } 30% { opacity: 0.85; } 100% { opacity: 0; transform: translateY(-5em); } }
+.notfound-links { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+@media (max-width: 56rem) {
+  .notfound > .stage { margin-left: -0.9rem; margin-right: -0.9rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stage .walker { animation: none; left: calc(50% + 1.5ch); }
+  .stage .fr { display: none; }
+  .stage .f-end { display: block; visibility: visible; animation: none; }
+  .stage .puff, .stage .bwisp { display: none; }
+  .stage .f-bg { display: block; visibility: visible; animation: none; }
 }

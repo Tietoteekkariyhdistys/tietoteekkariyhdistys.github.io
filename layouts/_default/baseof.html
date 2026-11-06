@@ -2,14 +2,21 @@
 <html lang="{{ .Site.LanguageCode }}">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} – {{ .Site.Title }}{{ end }}</title>
-    {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else if eq .Kind "404" }}404 – Sivua ei löytynyt · Page not found · Sidan hittades inte – {{ .Site.Title }}{{ else }}{{ .Title }} – {{ .Site.Title }}{{ end }}</title>
+    {{- /* Description: the page's own (front matter "description"), else the start of its text, else the site's */ -}}
+    {{ $desc := .Site.Params.description }}
+    {{ if .Description }}{{ $desc = .Description }}
+    {{ else if and (not .IsHome) (eq .Kind "page") }}
+      {{ $text := .Summary | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace }}
+      {{ if ge (len $text) 60 }}{{ $desc = $text | truncate 160 }}{{ end }}
+    {{ end }}
+    <meta name="description" content="{{ $desc }}">
+    {{ if ne .Kind "404" }}
     {{- /* Link preview card (Telegram, WhatsApp, Discord, Slack, ...) */ -}}
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="{{ .Site.Title }}">
     <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
-    {{ with .Site.Params.description }}<meta property="og:description" content="{{ . }}">{{ end }}
+    <meta property="og:description" content="{{ $desc }}">
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:locale" content="{{ replace .Site.LanguageCode "-" "_" }}">
     <meta property="og:image" content="{{ "img/share.png" | absURL }}">
@@ -17,17 +24,24 @@
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Tietoteekkariyhdistys TTY ry logo">
     <meta name="twitter:card" content="summary_large_image">
+    {{ end }}
+    {{- /* Canonical address and the other language versions, for search engines */ -}}
+    {{ if ne .Kind "404" }}
+    <link rel="canonical" href="{{ .Permalink }}">
+    {{ range .AllTranslations }}<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+    {{ end }}
+    {{ range where .AllTranslations "Language.Lang" "fi" }}<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">{{ end }}
+    {{ end }}
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="all,follow">
-    <meta name="googlebot" content="index,follow,snippet,archive">
+    {{ if eq .Kind "404" }}<meta name="robots" content="noindex">{{ end }}
+    {{ block "head" . }}{{ end }}
     {{ with resources.Get "css/main.css" | fingerprint }}<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">{{ end }}
 
     {{- partial "favicon.html" . -}}
     {{ with .OutputFormats.Get "RSS" }}
       {{ printf `<link href="%s" rel="%s" type="%s" title="%s" />` .Permalink .Rel .MediaType.Type $.Site.Title | safeHTML }}
     {{ end }}
-
-    {{- partial "header.html" . -}}
+
 </head>
 <body>
     <a class="skip-link" href="#main">{{ site.Params.skipLink }}</a>

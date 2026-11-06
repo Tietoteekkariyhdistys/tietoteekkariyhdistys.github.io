@@ -1,5 +1,6 @@
 +++
 title = "Board 2026"
+description = "The 2026 board of Tietoteekkariyhdistys ry: roles, members and contact details."
 year = 2026
 
 [[people]]

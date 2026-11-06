@@ -1,5 +1,6 @@
 +++
 title = "Association bylaws"
+description = "The full bylaws of Tietoteekkariyhdistys ry (in Finnish)."
 +++
 
 The bylaws of Tietoteekkariyhdistys ry are available **only in Finnish**. There is no official English translation.

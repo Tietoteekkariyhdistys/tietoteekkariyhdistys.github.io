@@ -1,5 +1,6 @@
 +++
 title = "Tietoteekkariyhdistyksen säännöt"
+description = "Tietoteekkariyhdistys ry:n säännöt kokonaisuudessaan."
 date = "2024-01-11"
 +++
 

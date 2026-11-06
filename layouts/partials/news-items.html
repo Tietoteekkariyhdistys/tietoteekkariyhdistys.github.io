@@ -1,0 +1,2 @@
+{{- /* News items of a section, newest first, without those marked private = true. */ -}}
+{{- return sort (where .Pages ".Params.private" "!=" true) "Date" "desc" -}}

@@ -3,7 +3,7 @@
   <h1>{{ .Page.Title }}</h1>
   {{ .Content }}
 
-  {{ $posts := sort (where .Pages ".Params.private" "!=" true) "Date" "desc" }}
+  {{ $posts := partial "news-items.html" . }}
   {{ if ge (len $posts) 1 }}
   <ul class="post-list">
     {{ range $posts }}

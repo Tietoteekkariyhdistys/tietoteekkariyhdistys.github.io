@@ -16,7 +16,10 @@
       </div>
     </div>
     <div class="hero-bylaws prose">
-      {{ partial "purpose-links.html" . }}
+      <p class="inline-links">
+        <a href="{{ relURL "bylaws/" }}">{{ site.Params.bylawsLink }}</a>
+        {{- with site.Params.bylawsPdf }} · <a href="{{ . | relURL }}">PDF</a>{{ end }}
+      </p>
     </div>
     {{ partial "guilds.html" . }}
   </div>
@@ -31,8 +34,8 @@
 {{ end }}
 {{ end }}
 
-{{ with .Site.GetPage "/posts" }}
-  {{ $posts := first 3 (sort (where .Pages ".Params.private" "!=" true) "Date" "desc") }}
+{{ with .Site.GetPage "/news" }}
+  {{ $posts := first 3 (partial "news-items.html" .) }}
   {{ if ge (len $posts) 1 }}
   <section class="section">
     <h2>{{ site.Params.latestPosts }}</h2>

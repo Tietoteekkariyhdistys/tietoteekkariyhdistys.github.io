@@ -1,5 +1,6 @@
 +++
 title = "Apply to Become a Member"
+description = "How to apply for membership in Tietoteekkariyhdistys by email, and the membership fees."
 +++
 
 Any member of TTY's member guilds can apply to become **an individual member** of TTY. Any person or legal community who supports the organization's activities can be accepted as **a support member**. Member applications are handled and accepted by the board. Membership lasts for the calendar year.
@@ -12,7 +13,7 @@ The organization can also have **honorary members** who have been commended on t
   - your whole name (legally required)
   - official place of residence (legally required)
   - whether you want to become an individual member or a support member
-  - which TTY member guild are you a member of (only if applying to become an individual member)
+  - which TTY member guild you are a member of (only if applying to become an individual member)
 - Wait to receive the confirmation and acceptance of your membership by email
 - Pay the membership fee according to the instructions given in the acceptance email
 

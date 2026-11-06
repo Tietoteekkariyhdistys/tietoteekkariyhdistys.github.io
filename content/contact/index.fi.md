@@ -1,5 +1,6 @@
 +++
 title = "Yhteystiedot"
+description = "Tietoteekkariyhdistys ry:n yhteystiedot: sähköposti, osoite ja Y-tunnus."
 +++
 
 **Tietoteekkariyhdistys ry**

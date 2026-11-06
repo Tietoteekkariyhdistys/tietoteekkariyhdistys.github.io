@@ -1,5 +1,6 @@
 +++
 title = "Hallitus 2026"
+description = "Tietoteekkariyhdistys ry:n hallitus 2026: tehtävät, jäsenet ja yhteystiedot."
 year = 2026
 
 [[people]]
@@ -18,8 +19,8 @@ role = "Sihteeri"
 name = "Veera Ollila"
 email = "sihteeri@tietoteekkariyhdistys.fi"
 [[people]]
-file = "taloudenhoitaja"
-role = "Taloudenhoitaja"
+file = "rahastonhoitaja"
+role = "Rahastonhoitaja"
 name = "Jesse Rikkinen"
 email = "rahastovastaava@tietoteekkariyhdistys.fi"
 [[people]]

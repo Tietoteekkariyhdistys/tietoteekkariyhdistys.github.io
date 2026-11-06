@@ -1,5 +1,6 @@
 +++
 title = "Yhdistys ja historia"
+description = "Tietoteekkariyhdistyksen historia ja tausta: suunnittelusta perustamiseen vuonna 2023."
 +++
 
 Tietoteekkariyhdistys (TTY) on Suomen tietoteekkarien ainejärjestöjen eli kiltojen kattojärjestö. Järjestö perustettiin vuonna 2023 Titeenien Taistoilla Turussa. Yhdistyksen tarkoituksen löydät etusivulta.

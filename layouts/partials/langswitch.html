@@ -4,7 +4,7 @@
   {{ range site.Home.AllTranslations }}
   {{ $lang := .Language.Lang }}
   {{ $target := . }}
-  {{ range where $page.AllTranslations "Language.Lang" $lang }}{{ $target = . }}{{ end }}
+  {{ if ne $page.Kind "404" }}{{ range where $page.AllTranslations "Language.Lang" $lang }}{{ $target = . }}{{ end }}{{ end }}
   <li><a href="{{ $target.RelPermalink }}" hreflang="{{ $lang }}" lang="{{ $lang }}" title="{{ .Language.LanguageName }}"{{ if eq $lang $l }} aria-current="true"{{ end }}>{{ $lang }}</a></li>
   {{ end }}
 </ul>

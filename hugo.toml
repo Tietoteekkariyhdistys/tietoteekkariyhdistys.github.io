@@ -1,20 +1,13 @@
-baseURL = '/'
+baseURL = 'https://tietoteekkariyhdistys.fi/'
 languageCode = 'fi-FI'
 title = 'Tietoteekkariyhdistys TTY'
 defaultContentLanguage = 'fi'
 timeZone = 'Europe/Helsinki'
+disableKinds = ['taxonomy', 'term']
+enableGitInfo = true
 
-[module]
-  # Use the theme layouts only; its static terminal CSS and fonts are not shipped
-  [[module.imports]]
-    path = "hugo-theme-console"
-    [[module.imports.mounts]]
-      source = "layouts"
-      target = "layouts"
-    [[module.imports.mounts]]
-      source = "archetypes"
-      target = "archetypes"
-
+[frontmatter]
+  lastmod = [':git', 'lastmod', 'date', 'publishDate']
 
 [params]
   bylawsPdf = "saannot.pdf"
@@ -34,7 +27,7 @@ timeZone = 'Europe/Helsinki'
     path = "about/"
     name = { fi = "yhdistys.md", sv = "forening.md", en = "about.md" }
     [[params.tree.files]]
-    path = "posts/"
+    path = "news/"
     name = { fi = "tiedotteet.md", sv = "nyheter.md", en = "news.md" }
     [[params.tree.files]]
     path = "board/"
@@ -125,6 +118,7 @@ timeZone = 'Europe/Helsinki'
     languageDirection = 'ltr'
     languageName = 'Svenska'
     title = 'Tietoteekkariyhdistys TTY'
+    disableKinds = ['taxonomy', 'term', '404']  # a static host serves a single root 404.html
     weight = 3
       [languages.sv.params]
         mainNav = "Huvudmeny"
@@ -146,7 +140,7 @@ timeZone = 'Europe/Helsinki'
         noPosts = "Inga nyheter har publicerats."
         purposeTitle = "Ändamål"
         purposeText = "Tietoteekkariyhdistys ry:s ändamål är att förena studerande på utbildningslinjer som leder till diplomingenjörsexamen inom datateknik i Finland, förespråka deras studierelaterade intressen på riksnivå och skapa betydelsefulla livserfarenheter för sina medlemmar. Vi ordnar evenemang, fester och excursioner, samarbetar med ämnesföreningar, studentkårer, universitet och företag samt stöder kommunikationen mellan ämnesföreningarna."
-        bylawsLink = "Föreningens regler (på finska)"
+        bylawsLink = "Föreningens stadgar (på finska)"
         guildsTitle = "Medlemsföreningar"
         explorerTitle = "Filer"
         crumbLabel = "Sökväg"
@@ -167,6 +161,7 @@ timeZone = 'Europe/Helsinki'
     languageDirection = 'ltr'
     languageName = 'English'
     title = 'Tietoteekkariyhdistys TTY'
+    disableKinds = ['taxonomy', 'term', '404']  # a static host serves a single root 404.html
     weight = 2
       [languages.en.params]
         mainNav = "Main menu"
@@ -184,8 +179,8 @@ timeZone = 'Europe/Helsinki'
         eventLink = "More information"
         heroText1 = "Tietoteekkariyhdistys (TTY) is an umbrella organization for Finnish IT student guilds, founded in 2023."
         description = "Tietoteekkariyhdistys ry is an umbrella association of Finnish IT student guilds, founded in 2023."
-        latestPosts = "Latest posts"
-        noPosts = "No posts have been published."
+        latestPosts = "Latest news"
+        noPosts = "No news has been published."
         purposeTitle = "Purpose"
         purposeText = "Tietoteekkariyhdistys ry is a non-profit association that brings together students of Finnish computer science and IT engineering (M.Sc. Tech.) degree programmes, advocates for their study-related interests at the national level, and creates meaningful experiences for its members. We organize events, gatherings and excursions, cooperate with student guilds, student unions, universities and companies, and support communication between the guilds."
         bylawsLink = "Association bylaws (in Finnish)"

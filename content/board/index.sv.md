@@ -1,5 +1,6 @@
 +++
 title = "Styrelse 2026"
+description = "Tietoteekkariyhdistys ry:s styrelse 2026: roller, medlemmar och kontaktuppgifter."
 year = 2026
 
 [[people]]
@@ -33,8 +34,8 @@ role = "Evenemangsansvariga"
 name = "Essi Pakkala och Jami Vihavainen"
 email = "tapahtumat@tietoteekkariyhdistys.fi"
 [[people]]
-file = "foretagsansvariga"
-role = "Företagsansvariga"
+file = "foretagsforhallandeansvariga"
+role = "Företagsförhållandeansvariga"
 name = "Titus Paalanen och Tapio Yli-Soini"
 email = "yritys@tietoteekkariyhdistys.fi"
 [[people]]

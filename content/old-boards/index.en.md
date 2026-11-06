@@ -1,13 +1,12 @@
 +++
 title = "Old Boards"
+description = "Past boards of Tietoteekkariyhdistys ry."
 +++
-
-The list of old boards begins.
 
 ## 2025
 
 - **Chairperson**: Riikka Munne
-- **Vice Chairperson**: Valtteri Erkkilä / Georgi Horosh
+- **Vice Chairperson**: Georgi Horosh
 - **Secretary**: Veera Ollila
 - **Treasurer**: Emilia Repo
 - **Communications Officer**: Ulriikka Sosi
@@ -33,5 +32,3 @@ The list of old boards begins.
 - **Board Member**: Konsta Purtsi
 - **Board Member**: Nuutti Rantanen
 - **Board Member**: Saku Tiihonen
-
-The list of old boards ends.

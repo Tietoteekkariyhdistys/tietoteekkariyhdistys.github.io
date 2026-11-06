@@ -1,5 +1,6 @@
 +++
 title = "Contact"
+description = "Contact details of Tietoteekkariyhdistys ry: email, address and business ID."
 +++
 
 **Tietoteekkariyhdistys ry**

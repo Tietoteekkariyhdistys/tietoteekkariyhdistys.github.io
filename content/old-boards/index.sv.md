@@ -1,15 +1,14 @@
 +++
 title = "Gamla styrelser"
+description = "Tietoteekkariyhdistys ry:s tidigare styrelser."
 +++
-
-Lista över gamla styrelser börjar.
 
 ## 2025
 
 - **Ordförande**: Riikka Munne
-- **Viceordförande**: Valtteri Erkkilä / Georgi Horosh
+- **Viceordförande**: Georgi Horosh
 - **Sekreterare**: Veera Ollila
-- **Kassör**: Emilia Repo
+- **Skattmästare**: Emilia Repo
 - **Kommunikationsansvarig**: Ulriikka Sosi
 - **Företagsförhållandeansvarig**: Verneri Pudas
 - **Evenemangsansvarig**: Essi Pakkala
@@ -19,7 +18,7 @@ Lista över gamla styrelser börjar.
 - **Ordförande**: Riikka Munne
 - **Viceordförande**: Nuutti Rantanen
 - **Sekreterare**: Sami Valjakka
-- **Kassör**: Hiski Hämäläinen
+- **Skattmästare**: Hiski Hämäläinen
 - **Kommunikationsansvarig**: Santeri Hyvärinen
 - **Företagsförhållandeansvarig**: Ben Hägglund
 - **Evenemangsansvarig**: Oskari Järvinen
@@ -29,9 +28,7 @@ Lista över gamla styrelser börjar.
 - **Ordförande**: Riina Annunen
 - **Viceordförande**: Rami Saarivuori
 - **Sekreterare**: Robert Kantero
-- **Kassör**: Lassi Knuuttila
+- **Skattmästare**: Lassi Knuuttila
 - **Styrelsemedlem**: Konsta Purtsi
 - **Styrelsemedlem**: Nuutti Rantanen
 - **Styrelsemedlem**: Saku Tiihonen
-
-Lista över gamla styrelser tar slut.

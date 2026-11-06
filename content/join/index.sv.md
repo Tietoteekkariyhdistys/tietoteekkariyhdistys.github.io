@@ -1,5 +1,6 @@
 +++
 title = "Bli medlem"
+description = "Så ansöker du om medlemskap i Tietoteekkariyhdistys per e-post, samt medlemsavgifterna."
 +++
 
 Alla som är medlemmar i någon av TTYs medlemsföreningar kan bli **personmedlem** i föreningen. Som **stödjande medlem** kan godkännas personer som stöder föreningens verksamhet eller sammanslutning med rättslig handlingsförmåga. Föreningens styrelse godkänner nya medlemmar via medlemsansökan. Medlemskapen är i kraft ett kalenderår åt gången.
@@ -19,6 +20,6 @@ Ytterligare kan föreningen utse **hedersmedlemmar**, som är speciellt förtjä
 ## Medlemsavgifter 2026
 
 - **Personmedlem**: 5 €
-- **Stödjande medlem**:15 €
+- **Stödjande medlem**: 15 €
 
 Det finns ingen skild anslutningsavgift för nya medlemmar. För hedersmedlemmar finns det ingen anslutnings- eller medlemsavgift.

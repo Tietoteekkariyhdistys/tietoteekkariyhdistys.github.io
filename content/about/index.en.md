@@ -1,5 +1,6 @@
 +++
 title = "Who we are and where we came from"
+description = "The history of Tietoteekkariyhdistys: from the first plans to its founding in 2023."
 +++
 
 Tietoteekkariyhdistys (TTY) is an umbrella organization for all of Finland's IT student guilds, founded in 2023 during the Titeenien Taistot event in Turku. You can read our purpose on the front page.

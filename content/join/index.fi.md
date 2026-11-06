@@ -1,8 +1,9 @@
 +++
 title = "Liity jäseneksi"
+description = "Näin haet jäseneksi Tietoteekkariyhdistykseen: hakeminen sähköpostilla ja jäsenmaksut."
 +++
 
-Yhdistyksen **henkilöjäseneksi** voivat hakea kaikki TTY:n jäsenyhdistysten jäsenet. **Kannattajajäseneksi** voidaan hyväksyä kuka tahansa yhdistyksen toimintaa tukeva henkilö tai oikeustoimikelpoinen yhteisö. Jäsenet hyväksyy hakemuksesta yhdistyksen hallitus. Jäsenyys kestää kalenterivuoden alusta sen loppuun.
+Yhdistyksen **henkilöjäseneksi** voivat hakea kaikki TTY:n jäsenyhdistysten jäsenet. **Kannatusjäseneksi** voidaan hyväksyä kuka tahansa yhdistyksen toimintaa tukeva henkilö tai oikeustoimikelpoinen yhteisö. Jäsenet hyväksyy hakemuksesta yhdistyksen hallitus. Jäsenyys kestää kalenterivuoden alusta sen loppuun.
 
 Lisäksi yhdistyksellä voi olla **kunniajäseniä**, jotka ovat erityisesti ansioituneet yhdistyksen toiminnassa tai muuten merkittävästi edistäneet sen pyrkimyksiä. Kunniajäsenet valitsee hallituksen esityksestä yhdistyksen yleiskokous eikä kunniajäseneksi voi hakea.
 

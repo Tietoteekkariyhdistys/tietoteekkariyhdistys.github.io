@@ -1,3 +1,15 @@
+{{ define "head" }}
+{{ with .Params.people }}
+<style>
+@supports selector(:has(a)) {
+{{- range . }}
+  .board:has(#bf-{{ .file }}:checked) #{{ .file }} { display: flex; flex-direction: column; }
+{{- end }}
+}
+</style>
+{{ end }}
+{{ end }}
+
 {{ define "main" }}
 <article class="page wide">
   <h1>{{ .Title }}</h1>
@@ -7,13 +19,6 @@
   {{ $sep := `\s(?:and|ja|och)\s` }}
   {{- /* Master/detail without JS: radio inputs select the file, CSS (:has) shows only that panel.
          Without CSS, where :has is unsupported, and in print, every panel is shown as a plain list. */ -}}
-  <style>
-  @supports selector(:has(a)) {
-  {{- range . }}
-    .board:has(#bf-{{ .file }}:checked) #{{ .file }} { display: flex; flex-direction: column; }
-  {{- end }}
-  }
-  </style>
   <div class="board">
     <div class="board-tree">
       <fieldset>
@@ -39,14 +44,13 @@
                photos = ["name.jpg"] on the person, in the same order as the names. Without a photo the placeholder is shown. */ -}}
         {{ $names := split (replaceRE $sep "|" .name) "|" }}
         {{ $photos := .photos | default slice }}
-        {{ $file := .file }}
         <div class="portraits">
           {{ range $i, $n := $names }}
           {{ $url := "" }}{{ $alt := "" }}
           {{ if lt $i (len $photos) }}{{ with $.Resources.GetMatch (index $photos $i) }}{{ with .Fill "400x400 center q85" }}{{ $url = .RelPermalink }}{{ $alt = $n }}{{ end }}{{ end }}{{ end }}
           {{ if not $url }}{{ $url = "img/board-placeholder.svg" | relURL }}{{ end }}
           <figure class="pwin">
-            <figcaption class="pwin-bar data">{{ if gt (len $names) 1 }}{{ $n }}{{ else }}{{ $file }}.png{{ end }}</figcaption>
+            <figcaption class="pwin-bar data">{{ $n }}</figcaption>
             <img src="{{ $url }}" width="400" height="400" alt="{{ $alt }}" loading="lazy">
           </figure>
           {{ end }}

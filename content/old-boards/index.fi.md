@@ -1,15 +1,14 @@
 +++
 title = "Vanhat hallitukset"
+description = "Tietoteekkariyhdistys ry:n aiempien vuosien hallitukset."
 +++
-
-Lista vanhoista hallituksista alkaa.
 
 ## 2025
 
 - **Puheenjohtaja**: Riikka Munne
-- **Varapuheenjohtaja**: Valtteri Erkkilä / Georgi Horosh
+- **Varapuheenjohtaja**: Georgi Horosh
 - **Sihteeri**: Veera Ollila
-- **Taloudenhoitaja**: Emilia Repo
+- **Rahastonhoitaja**: Emilia Repo
 - **Viestintävastaava**: Ulriikka Sosi
 - **Yritysvastaava**: Verneri Pudas
 - **Tapahtumavastaava**: Essi Pakkala
@@ -21,7 +20,7 @@ Lista vanhoista hallituksista alkaa.
 - **Sihteeri**: Sami Valjakka
 - **Rahastonhoitaja**: Hiski Hämäläinen
 - **Viestintävastaava**: Santeri Hyvärinen
-- **Yritysyhteistyövastaava**: Ben Hägglund
+- **Yritysvastaava**: Ben Hägglund
 - **Tapahtumavastaava**: Oskari Järvinen
 
 ## 2023
@@ -33,5 +32,3 @@ Lista vanhoista hallituksista alkaa.
 - **Hallituksen jäsen**: Konsta Purtsi
 - **Hallituksen jäsen**: Nuutti Rantanen
 - **Hallituksen jäsen**: Saku Tiihonen
-
-Lista vanhoista hallituksista päättyy.

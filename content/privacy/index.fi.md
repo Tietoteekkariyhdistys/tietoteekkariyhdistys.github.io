@@ -1,29 +1,26 @@
 +++
 title = "Tietosuojaseloste"
+description = "Tietoteekkariyhdistys ry:n tietosuojaseloste: jäsenrekisteri, verkkosivusto ja oikeutesi."
 +++
 
 Tässä selosteessa kuvataan, miten Tietoteekkariyhdistys ry (Y-tunnus 3381706-8, Konemiehentie 2, 02150 Espoo) käsittelee henkilötietoja. Rekisterinpitäjä on yhdistys, jota edustaa sen hallitus. Yhteystiedot: hallitus@tietoteekkariyhdistys.fi.
 
 ## Jäsenrekisteri
 
-Yhdistyslaki velvoittaa yhdistystä pitämään jäsenluetteloa. Kun haet jäsenyyttä sähköpostilla, hallitus kerää seuraavat tiedot:
+Yhdistyksen varsinaisia jäseniä ovat jäsenkillat, jotka ovat yhteisöjä. Killan omien jäsenten henkilötiedot ovat killan hallussa, eivät Tietoteekkariyhdistyksen, emmekä saa niitä itsellemme. Tällä hetkellä yhdistyksellä ei ole henkilö- eikä kannatusjäseniä, joten se ei pidä rekisteriä henkilöistä.
+
+Jos haet henkilö- tai kannatusjäseneksi sähköpostilla, yhdistyslaki velvoittaa yhdistystä pitämään jäsenluetteloa. Tällöin hallitus kerää seuraavat tiedot:
 
 - koko nimesi (lain vaatima tieto)
 - virallinen kotipaikkasi (lain vaatima tieto)
 - sähköpostiosoitteesi, joka näkyy hallitukselle, kun kirjoitat sille
 - henkilöjäsenillä myös se, minkä jäsenkillan jäsen olet
 
-Tietoja käytetään jäsenhakemusten käsittelyyn ja hyväksymiseen, jäsenluettelon pitämiseen, jäsenviestintään ja jäsenmaksujen laskuttamiseen.
-
-<!-- TODO(board): State where the member register and the application emails are stored (which system or provider) and who has access to them. -->
-<!-- TODO(board): State how long member data is kept after membership ends. -->
+Tietoja käytetään vain jäsenhakemusten käsittelyyn ja hyväksymiseen, jäsenluettelon pitämiseen, jäsenviestintään ja jäsenmaksujen laskuttamiseen. Käsittelyn peruste on yhdistyksen lakisääteinen velvollisuus pitää jäsenluetteloa sekä oma jäsenhakemuksesi. Tietoja ei luovuteta kolmansille osapuolille, ellei laki sitä edellytä, esimerkiksi viranomaisille. Tietoja säilytetään jäsenyytesi ajan ja sen jälkeen vain niin kauan kuin laki tai yhdistyksen kirjanpito edellyttää.
 
 ## Verkkosivusto
 
-Sivusto ei käytä evästeitä, analytiikkaa tai mainontaa, eikä se lataa skriptejä, fontteja tai muuta sisältöä kolmansilta osapuolilta. Emme kerää henkilötietoja itse sivuston kautta. Sivusto on GitHub Pagesissa, ja palveluntarjoaja voi käsitellä teknisiä tietoja, kuten IP-osoitteita, kun sivuja ladataan.
-
-<!-- TODO(board): Confirm and state the legal basis for processing member data. -->
-<!-- TODO(board): Confirm whether member data is shared with anyone (for example member guilds or authorities) and list the recipients. -->
+Sivusto ei käytä evästeitä, analytiikkaa tai mainontaa, eikä se lataa skriptejä, fontteja tai muuta sisältöä kolmansilta osapuolilta. Emme kerää henkilötietoja itse sivuston kautta. Hallituksen jäsenten nimet ja yhdistyksen sähköpostiosoitteet on julkaistu sivustolla, jotta heihin saa yhteyden heidän tehtävässään. Sivusto on julkaistu verkkopalvelimella, ja palveluntarjoaja voi käsitellä teknisiä tietoja, kuten IP-osoitteita, kun sivuja ladataan.
 
 ## Oikeutesi
 
