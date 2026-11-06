@@ -24,7 +24,7 @@
           <li><a href="{{ $href }}"{{ if $isCur }} class="current" aria-current="page"{{ else if $isParent }} class="parent" aria-current="true"{{ end }}>{{ index .name $lang }}</a></li>
           {{ end }}
           {{ if eq $kind "guilds" }}
-          {{ range sort hugo.Data.guilds "name" }}
+          {{ range sort site.Data.guilds "name" }}
           <li><a class="ext" href="{{ .url }}"{{ with (or (index . (printf "university_%s" $lang)) .university) }} title="{{ . }}"{{ end }}>{{ lower .name }}<span aria-hidden="true" class="arrow"> ↗</span></a></li>
           {{ end }}
           {{ end }}
