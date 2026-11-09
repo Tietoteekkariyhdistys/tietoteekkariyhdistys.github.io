@@ -4,6 +4,11 @@
   <p class="meta">{{ .Date.Format "2.1.2006" }}
   {{ with .Params.location }} · {{ site.Params.eventLocation }}: {{ . }}{{ end }}
   {{ with .Params.link }} · <a href="{{ . }}">{{ site.Params.eventLink }}</a>{{ end }}</p>
+  {{ with .Params.image }}
+    {{ with resources.Get . }}
+      <img src="{{ (.Resize "800x").RelPermalink }}" alt="{{ $.Title }}" class="img-responsive">
+    {{ end }}
+  {{ end }}
   {{ .Content }}
 </article>
 {{ end }}

@@ -6,9 +6,9 @@
   {{ range $upcoming }}
   <li>
     <span class="event-date">{{ .Date.Format "2.1.2006" }}</span>
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <a href="{{ with .Params.link }}{{ . }}{{ else }}{{ .RelPermalink }}{{ end }}">{{ .Title }}</a>
     {{ with .Params.location }}<span class="event-meta">{{ site.Params.eventLocation }}: {{ . }}</span>{{ end }}
-    {{ with .Params.link }}<a class="event-meta" href="{{ . }}">{{ site.Params.eventLink }}</a>{{ end }}
+    {{ if .Params.link }}<a class="event-meta" href="{{ .RelPermalink }}">{{ site.Params.eventLink }}</a>{{ end }}
   </li>
   {{ end }}
 </ul>

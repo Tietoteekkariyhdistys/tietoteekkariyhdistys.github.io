@@ -49,9 +49,6 @@ enableGitInfo = true
   [[params.tree]]
   dir = "events"
   kind = "events"
-    [[params.tree.files]]
-    path = "events/"
-    name = { fi = "tapahtumat.md", sv = "evenemang.md", en = "events.md" }
 
   [[params.tree]]
   dir = "docs"
